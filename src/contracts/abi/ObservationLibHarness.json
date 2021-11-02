@@ -1,0 +1,108 @@
+[
+  {
+    "inputs": [],
+    "name": "MAX_CARDINALITY",
+    "outputs": [
+      {
+        "internalType": "uint24",
+        "name": "",
+        "type": "uint24"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint24",
+        "name": "_observationIndex",
+        "type": "uint24"
+      },
+      {
+        "internalType": "uint24",
+        "name": "_oldestObservationIndex",
+        "type": "uint24"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_target",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint24",
+        "name": "_cardinality",
+        "type": "uint24"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_time",
+        "type": "uint32"
+      }
+    ],
+    "name": "binarySearch",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint224",
+            "name": "amount",
+            "type": "uint224"
+          },
+          {
+            "internalType": "uint32",
+            "name": "timestamp",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct ObservationLib.Observation",
+        "name": "beforeOrAt",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint224",
+            "name": "amount",
+            "type": "uint224"
+          },
+          {
+            "internalType": "uint32",
+            "name": "timestamp",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct ObservationLib.Observation",
+        "name": "atOrAfter",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint224",
+            "name": "amount",
+            "type": "uint224"
+          },
+          {
+            "internalType": "uint32",
+            "name": "timestamp",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct ObservationLib.Observation[]",
+        "name": "_observations",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "setObservations",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

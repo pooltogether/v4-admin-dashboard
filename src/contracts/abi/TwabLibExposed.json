@@ -1,0 +1,421 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint208",
+            "name": "balance",
+            "type": "uint208"
+          },
+          {
+            "internalType": "uint24",
+            "name": "nextTwabIndex",
+            "type": "uint24"
+          },
+          {
+            "internalType": "uint24",
+            "name": "cardinality",
+            "type": "uint24"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct TwabLib.AccountDetails",
+        "name": "accountDetails",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint224",
+            "name": "amount",
+            "type": "uint224"
+          },
+          {
+            "internalType": "uint32",
+            "name": "timestamp",
+            "type": "uint32"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct ObservationLib.Observation",
+        "name": "twab",
+        "type": "tuple"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "isNew",
+        "type": "bool"
+      }
+    ],
+    "name": "Updated",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "MAX_CARDINALITY",
+    "outputs": [
+      {
+        "internalType": "uint24",
+        "name": "",
+        "type": "uint24"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_revertMessage",
+        "type": "string"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_currentTime",
+        "type": "uint32"
+      }
+    ],
+    "name": "decreaseBalance",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint208",
+            "name": "balance",
+            "type": "uint208"
+          },
+          {
+            "internalType": "uint24",
+            "name": "nextTwabIndex",
+            "type": "uint24"
+          },
+          {
+            "internalType": "uint24",
+            "name": "cardinality",
+            "type": "uint24"
+          }
+        ],
+        "internalType": "struct TwabLib.AccountDetails",
+        "name": "accountDetails",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint224",
+            "name": "amount",
+            "type": "uint224"
+          },
+          {
+            "internalType": "uint32",
+            "name": "timestamp",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct ObservationLib.Observation",
+        "name": "twab",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bool",
+        "name": "isNew",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "details",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint208",
+            "name": "balance",
+            "type": "uint208"
+          },
+          {
+            "internalType": "uint24",
+            "name": "nextTwabIndex",
+            "type": "uint24"
+          },
+          {
+            "internalType": "uint24",
+            "name": "cardinality",
+            "type": "uint24"
+          }
+        ],
+        "internalType": "struct TwabLib.AccountDetails",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "_startTime",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_endTime",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_currentTime",
+        "type": "uint32"
+      }
+    ],
+    "name": "getAverageBalanceBetween",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "_target",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_currentTime",
+        "type": "uint32"
+      }
+    ],
+    "name": "getBalanceAt",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_currentTime",
+        "type": "uint32"
+      }
+    ],
+    "name": "increaseBalance",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint208",
+            "name": "balance",
+            "type": "uint208"
+          },
+          {
+            "internalType": "uint24",
+            "name": "nextTwabIndex",
+            "type": "uint24"
+          },
+          {
+            "internalType": "uint24",
+            "name": "cardinality",
+            "type": "uint24"
+          }
+        ],
+        "internalType": "struct TwabLib.AccountDetails",
+        "name": "accountDetails",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint224",
+            "name": "amount",
+            "type": "uint224"
+          },
+          {
+            "internalType": "uint32",
+            "name": "timestamp",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct ObservationLib.Observation",
+        "name": "twab",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bool",
+        "name": "isNew",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "newestTwab",
+    "outputs": [
+      {
+        "internalType": "uint24",
+        "name": "index",
+        "type": "uint24"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint224",
+            "name": "amount",
+            "type": "uint224"
+          },
+          {
+            "internalType": "uint32",
+            "name": "timestamp",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct ObservationLib.Observation",
+        "name": "twab",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "oldestTwab",
+    "outputs": [
+      {
+        "internalType": "uint24",
+        "name": "index",
+        "type": "uint24"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint224",
+            "name": "amount",
+            "type": "uint224"
+          },
+          {
+            "internalType": "uint32",
+            "name": "timestamp",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct ObservationLib.Observation",
+        "name": "twab",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint208",
+            "name": "balance",
+            "type": "uint208"
+          },
+          {
+            "internalType": "uint24",
+            "name": "nextTwabIndex",
+            "type": "uint24"
+          },
+          {
+            "internalType": "uint24",
+            "name": "cardinality",
+            "type": "uint24"
+          }
+        ],
+        "internalType": "struct TwabLib.AccountDetails",
+        "name": "_accountDetails",
+        "type": "tuple"
+      }
+    ],
+    "name": "push",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint208",
+            "name": "balance",
+            "type": "uint208"
+          },
+          {
+            "internalType": "uint24",
+            "name": "nextTwabIndex",
+            "type": "uint24"
+          },
+          {
+            "internalType": "uint24",
+            "name": "cardinality",
+            "type": "uint24"
+          }
+        ],
+        "internalType": "struct TwabLib.AccountDetails",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "twabs",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint224",
+            "name": "amount",
+            "type": "uint224"
+          },
+          {
+            "internalType": "uint32",
+            "name": "timestamp",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct ObservationLib.Observation[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

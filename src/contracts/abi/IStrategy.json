@@ -1,0 +1,28 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "totalPrizeCaptured",
+        "type": "uint256"
+      }
+    ],
+    "name": "Distributed",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "distribute",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

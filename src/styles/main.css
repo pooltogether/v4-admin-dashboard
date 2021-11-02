@@ -1,0 +1,38 @@
+@tailwind base;
+
+a {
+  @apply text-blue-700;
+}
+
+a:hover {
+  @apply border-b-2 border-blue-700;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+.content p {
+  @apply my-6;
+}
+
+.content ul {
+  @apply my-6;
+}
+
+.min-h-vh {
+  min-height: 100vh;
+}
+
+
+.wallet-card {
+  @apply bg-gray-50 border-2 cursor-pointer rounded-lg p-3 shadow-sm hover:shadow-md hover:bg-white transition-all duration-300 ease-in-out; 
+}
+
+.hover-up {
+  @apply relative shadow-sm hover:shadow-xl top-0 hover:-top-0.5 transition-all duration-200 ease-in-out;
+}
+
+.btn-basic {
+  @apply bg-white cursor-pointer font-semibold text-gray-800 rounded-lg shadow-sm p-3 px-5 hover:shadow-xl relative top-0 hover:-top-0.5 transition-all duration-200 ease-in-out;
+}

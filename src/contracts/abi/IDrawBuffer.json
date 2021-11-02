@@ -1,0 +1,338 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "drawId",
+        "type": "uint32"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "winningRandomNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint32",
+            "name": "drawId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timestamp",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "beaconPeriodStartedAt",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "beaconPeriodSeconds",
+            "type": "uint32"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct IDrawBeacon.Draw",
+        "name": "draw",
+        "type": "tuple"
+      }
+    ],
+    "name": "DrawSet",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "getBufferCardinality",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "",
+        "type": "uint32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "drawId",
+        "type": "uint32"
+      }
+    ],
+    "name": "getDraw",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "winningRandomNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint32",
+            "name": "drawId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timestamp",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "beaconPeriodStartedAt",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "beaconPeriodSeconds",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct IDrawBeacon.Draw",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getDrawCount",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "",
+        "type": "uint32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32[]",
+        "name": "drawIds",
+        "type": "uint32[]"
+      }
+    ],
+    "name": "getDraws",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "winningRandomNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint32",
+            "name": "drawId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timestamp",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "beaconPeriodStartedAt",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "beaconPeriodSeconds",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct IDrawBeacon.Draw[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getNewestDraw",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "winningRandomNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint32",
+            "name": "drawId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timestamp",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "beaconPeriodStartedAt",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "beaconPeriodSeconds",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct IDrawBeacon.Draw",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getOldestDraw",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "winningRandomNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint32",
+            "name": "drawId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timestamp",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "beaconPeriodStartedAt",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "beaconPeriodSeconds",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct IDrawBeacon.Draw",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "winningRandomNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint32",
+            "name": "drawId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timestamp",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "beaconPeriodStartedAt",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "beaconPeriodSeconds",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct IDrawBeacon.Draw",
+        "name": "draw",
+        "type": "tuple"
+      }
+    ],
+    "name": "pushDraw",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "",
+        "type": "uint32"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "winningRandomNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint32",
+            "name": "drawId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timestamp",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "beaconPeriodStartedAt",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "beaconPeriodSeconds",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct IDrawBeacon.Draw",
+        "name": "newDraw",
+        "type": "tuple"
+      }
+    ],
+    "name": "setDraw",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "",
+        "type": "uint32"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

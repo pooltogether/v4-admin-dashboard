@@ -1,0 +1,157 @@
+.btn {
+  @apply py-2 px-4 font-semibold rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75 duration-200;
+}
+
+.btn-white {
+  @apply bg-white text-gray-600 hover:bg-gray-50 focus:ring-gray-400;
+}
+
+.btn-indigo {
+  @apply bg-indigo-500 text-white hover:bg-indigo-700 focus:ring-indigo-400;
+}
+.btn-purple {
+  @apply bg-purple-500 text-white hover:bg-purple-700 text-white focus:ring-purple-400;
+}
+
+.btn-purple-light {
+  @apply bg-purple-400 text-white hover:bg-purple-300 text-white hover:text-purple-700 focus:ring-purple-400;
+}
+
+.btn-red {
+  @apply bg-red-500 text-white hover:bg-red-700 text-white focus:ring-red-400;
+}
+.btn-green {
+  @apply bg-green-500 text-white hover:bg-green-400 focus:ring-green-400;
+}
+.btn-blue {
+  @apply bg-blue-500 text-white hover:bg-blue-700 focus:ring-blue-400;
+}
+.btn-orange {
+  @apply bg-yellow-500 hover:bg-yellow-600 focus:ring-yellow-400 text-purple-600;
+}
+.btn-disabled {
+  @apply bg-gray-500 hover:bg-gray-700 focus:ring-gray-400;
+}
+.btn-gray {
+  @apply text-gray-700 bg-gray-200 hover:bg-gray-300 focus:ring-gray-400 shadow-none;
+}
+
+.btn-small {
+  @apply text-sm py-1 px-3;
+}
+.btn-xs {
+  @apply text-xs !important;
+}
+.btn-sm {
+  @apply text-sm;
+}
+.btn-lg {
+  @apply text-lg px-5 py-4;
+}
+.btn-xl {
+  @apply w-full flex items-center justify-center px-8 py-3 border text-base font-medium rounded-md md:py-4 md:text-lg md:px-10;
+}
+
+.gradient-indigo {
+  @apply bg-gradient-to-b from-indigo-300 to-indigo-600;
+}
+.gradient-blue {
+  @apply bg-gradient-to-b from-blue-400 to-indigo-700;
+}
+.gradient-purple {
+  @apply bg-gradient-to-b from-purple-500 to-purple-800;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 20, 17, 0.8) 0%,
+    rgba(142, 126, 237, 0.8) 50%,
+    rgba(165, 138, 138, 0.8) 100%
+  );
+  /* background-blend-mode: color-dodge; */
+}
+.gradient-green-to-blue {
+  @apply bg-gradient-to-b from-green-400 to-blue-500;
+}
+.gradient-yellow-to-pink {
+  @apply bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500;
+}
+.gradient-white-to-gray {
+  @apply bg-gradient-to-b from-white via-gray-100 to-gray-100;
+}
+.gradient-gray {
+  @apply bg-gradient-to-r from-gray-100 via-gray-100 to-gray-200;
+}
+.gradient-gray-md {
+  @apply bg-gradient-to-r from-gray-300 via-gray-400 to-gray-400;
+}
+
+.gradient-orange {
+  @apply bg-gradient-to-r from-yellow-600 via-yellow-700 to-yellow-800;
+}
+
+.gradient-gold {
+  background-color: #f7cd57;
+  background-image: linear-gradient(147deg, #f7cd57 0%, #ff2525 100%);
+}
+
+.tag {
+  @apply px-2 inline-flex text-xs leading-5 font-semibold rounded-lg;
+  padding-bottom: 0.125rem;
+  padding-top: 0.125rem;
+}
+
+.tag-base {
+  @apply text-base;
+}
+
+.tag-white {
+  @apply text-gray-700 bg-white;
+}
+.tag-cloud {
+  @apply text-gray-600 bg-gray-100;
+}
+.tag-smoke {
+  @apply text-gray-700 bg-gray-200;
+}
+.tag-gray {
+  @apply text-gray-100 bg-gray-700;
+}
+.tag-green {
+  @apply text-green-100 bg-green-800;
+}
+.tag-green-light {
+  @apply text-green-800 bg-green-200;
+}
+.tag-red {
+  @apply text-red-100 bg-red-800;
+}
+.tag-blue {
+  @apply text-blue-100 bg-blue-800;
+}
+.tag-indigo {
+  @apply text-indigo-100 bg-indigo-800;
+}
+.tag-indigo {
+  @apply text-purple-100 bg-purple-800;
+}
+.tag-orange {
+  @apply text-yellow-100 bg-yellow-800;
+}
+.tag-pink {
+  @apply text-pink-100 bg-pink-800;
+}
+.tag-purple {
+  @apply text-purple-100 bg-purple-800;
+}
+.tag-purple-light {
+  @apply text-purple-900 bg-purple-200;
+}
+
+.notification-green {
+  @apply px-4 py-3 inline-flex leading-5 font-semibold rounded-full bg-green-100 text-green-800;
+}
+.notification-red {
+  @apply px-4 py-3 inline-flex leading-5 font-semibold rounded-full bg-red-100 text-red-800;
+}
+.notification-yellow {
+  @apply px-4 py-3 inline-flex leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800;
+}

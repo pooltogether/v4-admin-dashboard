@@ -1,0 +1,125 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "_cardinality",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "MAX_CARDINALITY",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "lastDrawId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "nextIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "cardinality",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct DrawRingBufferLib.Buffer",
+        "name": "_buffer",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_drawId",
+        "type": "uint32"
+      }
+    ],
+    "name": "_getIndex",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "",
+        "type": "uint32"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "lastDrawId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "nextIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "cardinality",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct DrawRingBufferLib.Buffer",
+        "name": "_buffer",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_drawId",
+        "type": "uint32"
+      }
+    ],
+    "name": "_push",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "lastDrawId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "nextIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "cardinality",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct DrawRingBufferLib.Buffer",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  }
+]

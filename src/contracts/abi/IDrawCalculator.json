@@ -1,0 +1,124 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "contract ITicket",
+        "name": "ticket",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "contract IDrawBuffer",
+        "name": "drawBuffer",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "contract IPrizeDistributionBuffer",
+        "name": "prizeDistributionBuffer",
+        "type": "address"
+      }
+    ],
+    "name": "Deployed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "contract PrizeDistributor",
+        "name": "prizeDistributor",
+        "type": "address"
+      }
+    ],
+    "name": "PrizeDistributorSet",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32[]",
+        "name": "drawIds",
+        "type": "uint32[]"
+      },
+      {
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "name": "calculate",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getDrawBuffer",
+    "outputs": [
+      {
+        "internalType": "contract IDrawBuffer",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32[]",
+        "name": "drawIds",
+        "type": "uint32[]"
+      }
+    ],
+    "name": "getNormalizedBalancesForDrawIds",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getPrizeDistributionBuffer",
+    "outputs": [
+      {
+        "internalType": "contract IPrizeDistributionBuffer",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

@@ -1,0 +1,2 @@
+- Button to execute Webhook in Defender Autotasks for pushing/setting Draw and PrizeDistribution as Manager
+- Button to execute Webhook in Defender Autotasks for pushing/setting Draw and PrizeDistribution as Owner

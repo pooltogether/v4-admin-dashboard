@@ -1,0 +1,24 @@
+{
+  "printWidth": 100,
+  "tabWidth": 2,
+  "overrides": [
+    {
+      "files": "*.*.{ts,tsx}",
+      "options": {
+        "parser": "typescript",
+        "trailingComma": "all",
+        "arrowParens": "always",
+        "singleQuote": true
+      }
+    },
+    {
+      "files": "*.*.{js, jsx}",
+      "options": {
+        "parser": "javascript",
+        "trailingComma": "all",
+        "arrowParens": "always",
+        "singleQuote": true
+      }
+    }
+  ]
+}

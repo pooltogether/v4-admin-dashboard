@@ -1,0 +1,21 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "toUint208",
+    "outputs": [
+      {
+        "internalType": "uint208",
+        "name": "",
+        "type": "uint208"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  }
+]
