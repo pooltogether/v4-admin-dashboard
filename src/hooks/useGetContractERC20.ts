@@ -1,7 +1,7 @@
-import { Contract } from "@ethersproject/contracts";
-import { InterfaceERC20 } from "@src/contracts/interfaces";
+import { Contract } from '@ethersproject/contracts';
+import { InterfaceERC20 } from '@src/contracts/interfaces';
 
-import { useGetContract } from "./useGetContract";
+import { useGetContract } from './useGetContract';
 
 /**
  * @name useGetContractERC20

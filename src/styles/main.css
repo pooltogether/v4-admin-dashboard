@@ -12,6 +12,10 @@ a:hover {
 
 @tailwind utilities;
 
+.react-tiny-popover-container {
+  z-index: 9999;
+}
+
 .content p {
   @apply my-6;
 }
@@ -22,6 +26,10 @@ a:hover {
 
 .min-h-vh {
   min-height: 100vh;
+}
+
+.card {
+  @apply bg-white border-2 rounded-lg p-6 shadow-sm hover:shadow-md hover:bg-white transition-all duration-300 ease-in-out; 
 }
 
 
@@ -35,4 +43,16 @@ a:hover {
 
 .btn-basic {
   @apply bg-white cursor-pointer font-semibold text-gray-800 rounded-lg shadow-sm p-3 px-5 hover:shadow-xl relative top-0 hover:-top-0.5 transition-all duration-200 ease-in-out;
+}
+
+.input {
+  @apply shadow appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-md;
+}
+
+.input-lg {
+  @apply px-4 py-2 text-2xl;
+}
+
+.label {
+  @apply block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2;
 }

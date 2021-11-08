@@ -5,6 +5,8 @@ import { useGetContractDrawBeacon } from '@src/hooks/useGetContractDrawBeacon';
 import { validateInputs } from '@src/utils/transaction';
 import { useContractCall, useContractCalls, useContractFunction, useEthers } from '@usedapp/core';
 
+const debug = require('debug')('web3:hooks:useDrawBeacon');
+
 /**
  * @name useDrawBeaconCall
  * @param {Object} props
@@ -36,11 +38,13 @@ export const useDrawBeaconCalls = (address: string, methods = [], inputs = []) =
     abi: InterfaceDrawBeacon,
     address,
     method,
-    args: inputs[index],
+    args: [],
   }));
 
-  const values = useContractCalls(address && calls && calls) ?? [];
-  return Array.isArray(values) ? values.map((value) => Array.isArray(value) && value[0]) : [];
+  debug('useDrawBeaconCalls:calls', calls);
+  const values = useContractCalls(address && calls) ?? [];
+  debug('useDrawBeaconCalls:values', values);
+  return Array.isArray(values) ? values.map((value) => Array.isArray(value) && value) : [];
 };
 
 /**

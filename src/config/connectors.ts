@@ -3,6 +3,7 @@ import { NetworkConnector } from '@web3-react/network-connector';
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
 import { WalletLinkConnector } from '@web3-react/walletlink-connector';
 
+import { SUPPORTED_CHAINS } from './constants';
 import {
   NETWORK_URL_MAINNET,
   NETWORK_URL_GOERLI,
@@ -23,7 +24,7 @@ export const network = new NetworkConnector({
 });
 
 export const injected = new InjectedConnector({
-  supportedChainIds: [1, 3, 4, 5, 42, 1337, 31337],
+  supportedChainIds: SUPPORTED_CHAINS,
 });
 
 export const walletconnect = new WalletConnectConnector({

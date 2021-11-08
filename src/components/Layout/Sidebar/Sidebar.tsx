@@ -14,6 +14,8 @@ import {
   Navigation,
   Archive,
   PlusSquare,
+  Aperture,
+  DollarSign,
 } from 'react-feather';
 
 const ProtocolStatus = (props) => {
@@ -46,6 +48,12 @@ export default function Sidebar() {
               defaultStyle
               image={<Info width={16} />}
             />
+            {/* <MenuItemSidebar
+              label="Assets"
+              href="/assets"
+              defaultStyle
+              image={<CreditCard width={16} />}
+            /> */}
             <MenuItemSidebar
               label="Monitor"
               href="/monitor"
@@ -57,6 +65,12 @@ export default function Sidebar() {
               href="/manage"
               defaultStyle
               image={<Database width={16} />}
+            />
+            <MenuItemSidebar
+              label="Treasury"
+              href="/treasury"
+              defaultStyle
+              image={<DollarSign width={16} />}
             />
           </ul>
 
@@ -81,6 +95,38 @@ export default function Sidebar() {
             />
           </ul>
 
+          {/* Divider */}
+          <hr className="my-4 w-full mt-2" />
+          <h6 className="md:min-w-full text-purple-800 text-md uppercase font-bold pt-1 pb-4 no-underline flex items-center justify-between">
+            <span className="ml-2">Contracts</span>
+            <Aperture className="text-purple-500 mr-1" width={32} />
+          </h6>
+          <ul className="md:flex-col md:min-w-full flex flex-col list-none">
+            <MenuItemSidebar
+              label="DrawBeacon"
+              href="/contract/draw-beacon"
+              defaultStyle
+              image={<Anchor width={16} />}
+            />
+            <MenuItemSidebar
+              label="DrawBuffer"
+              href="/contract/draw-buffer"
+              defaultStyle
+              image={<Anchor width={16} />}
+            />
+            <MenuItemSidebar
+              label="DrawCalculator"
+              href="/contract/draw-calculator"
+              defaultStyle
+              image={<Anchor width={16} />}
+            />
+            <MenuItemSidebar
+              label="PrizeDistributionBuffer"
+              href="/contract/prize-distribution-buffer"
+              defaultStyle
+              image={<Anchor width={16} />}
+            />
+          </ul>
           {/* Divider */}
           <hr className="my-4 w-full mt-32" />
           <ul className="md:flex-col md:min-w-full flex flex-col list-none">

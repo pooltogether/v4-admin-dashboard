@@ -1,6 +1,6 @@
-import { Interface } from "@ethersproject/abi";
-import { Contract } from "@ethersproject/contracts";
-import { useEthers } from "@usedapp/core";
+import { Interface } from '@ethersproject/abi';
+import { Contract } from '@ethersproject/contracts';
+import { useEthers } from '@usedapp/core';
 
 /**
  * @name  useGetContract

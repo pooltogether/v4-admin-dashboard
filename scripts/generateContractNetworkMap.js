@@ -3,7 +3,7 @@ const fs = require('fs');
 
 async function generateContractNetworkMap(modules) {
   const ContractNetworkMap = await generateMappingObjectFromHardhatDeployments(modules);
-  writeJSON(`${process.cwd()}/src/data/contractNetworks.json`, ContractNetworkMap);
+  writeJSON(`${process.cwd()}/src/data/contracts.json`, ContractNetworkMap);
 }
 
 function convertChainNameToChainID(name) {
@@ -91,4 +91,4 @@ async function readJSON(path) {
   }
 }
 
-generateContractNetworkMap(['@pooltogether/v4-mainnet']);
+generateContractNetworkMap(['@pooltogether/v4-mainnet', '@pooltogether/v4-testnet']);

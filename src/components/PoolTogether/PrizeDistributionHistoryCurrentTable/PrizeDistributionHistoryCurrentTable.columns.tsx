@@ -18,7 +18,7 @@ export const columns = [
         <span className="tag tag-white -ml-8 cursor-pointer shadow-sm top-0 hover-up">
           <CheckCircle className="text-green-500" width={18} />
         </span>
-        <span className="font-bold text-xl ml-2">{value && value + 6}</span>
+        <span className="font-bold text-xl ml-2">{value && value}</span>
       </div>
     ),
   },

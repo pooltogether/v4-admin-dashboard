@@ -9,3 +9,8 @@ export * from './InterfacePrizeSplitStratategy';
 export * from './InterfaceTicket';
 export * from './InterfaceDrawCalculator';
 export * from './InterfacePrizeDistributionBuffer';
+export * from './InterfacePrizeFlush';
+export * from './InterfacePrizeTierHistory';
+export * from './InterfaceL1TimelockTrigger';
+export * from './InterfaceL2TimelockTrigger';
+export * from './InterfaceDrawCalculatorTimelock';

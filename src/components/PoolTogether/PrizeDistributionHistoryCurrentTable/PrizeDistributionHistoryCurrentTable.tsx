@@ -19,7 +19,7 @@ interface IRowExpanded {
 }
 
 const RowExpanded = ({ row }: IRowExpanded) => (
-  <div className="bg-gray-100 shadow-sm p-3">
+  <div className="bg-gray-100 shadow-sm p-3 w-full">
     <div className="grid grid-cols-3 gap-x-6">
       <div className="p-2">
         <h3 className="font-normal text-lg border-b-2">Current Settings</h3>
@@ -43,8 +43,6 @@ const RowExpanded = ({ row }: IRowExpanded) => (
 export const PrizeDistributionHistoryCurrentTable = ({
   settings,
 }: IPrizeDistributionHistoryCurrentTable) => {
-  const [rangeIds, setRange] = useState<any>([]);
-
   const abi = useGetContractABI('PrizeDistributionBuffer');
   const address = useGetContractAddress('PrizeDistributionBuffer');
   const getNewestPrizeDistribution = useSafeContractCall(
@@ -60,13 +58,15 @@ export const PrizeDistributionHistoryCurrentTable = ({
     []
   );
 
+  const [rangeIds, setRange] = useState<any>([]);
   useEffect(() => {
     if (getNewestPrizeDistribution && getNewestPrizeDistribution.drawId && rangeIds.length === 0) {
       const start = getOldestPrizeDistribution.drawId;
       const end = getNewestPrizeDistribution.drawId;
-      setRange(range(10, start));
+      const rangeLength = end - start + 1;
+      setRange(range(rangeLength, start));
     }
-  }, [getNewestPrizeDistribution]);
+  }, [getNewestPrizeDistribution, getOldestPrizeDistribution.drawId, rangeIds.length]);
 
   const [data] = useSafeContractCall(address, abi, 'getPrizeDistributions', [[...rangeIds]]);
 

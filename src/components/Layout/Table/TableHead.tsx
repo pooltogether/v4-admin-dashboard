@@ -1,14 +1,16 @@
+import classNames from 'classnames';
+
 interface ITableHead {
   headerGroups: any;
+  defaultStyle: boolean;
 }
 
-/**
- * @name TableHead
- * @param {Object} props
- */
-export const TableHead = ({ headerGroups }: ITableHead) => {
+export const TableHead = ({ headerGroups, defaultStyle }: ITableHead) => {
+  const styleBase = classNames({
+    'bg-whites rounded-xl shadow-sm border-b-2 border-blue-300 h-16 pb-5 z-10': defaultStyle,
+  });
   return (
-    <thead className="bg-whites rounded-xl shadow-sm border-b-2 border-blue-300 h-16 pb-5 z-10">
+    <thead className={styleBase}>
       {headerGroups.map((headerGroup: any, ihg: any) => (
         <tr key={ihg} className="mt-3" {...headerGroup.getHeaderGroupProps()}>
           {headerGroup.headers.map((column: any, ihgh: number) => (

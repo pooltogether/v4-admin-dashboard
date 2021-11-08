@@ -1,7 +1,10 @@
-import { PrizeDistributionHistoryCurrentTable } from '@src/components/PoolTogether/PrizeDistributionHistoryCurrentTable/PrizeDistributionHistoryCurrentTable';
-import { NetworkSelector } from '@src/components/Web3/Network/NetworkSelector';
+import React from 'react';
+
+import { TableDrawAndPrizeDistribution } from '@src/components/PoolTogether/TableDrawAndPrizeDistribution';
+import { ChainSwitch } from '@src/components/Web3/Chain/ChainSwitch';
 import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
 import { Admin } from '@src/templates/Admin';
+import Link from 'next/link';
 
 export default function PrizeDistributions() {
   const address = useGetContractAddress('PrizeDistributionBuffer');
@@ -13,13 +16,17 @@ export default function PrizeDistributions() {
             <span className="text-gray-600">Status:</span>{' '}
             <span className="font-bold text-purple-700">Success</span>
           </h3>
-          <span className="tag tag-white ml-4 mt-2">Validate the prize distribution</span>
+          <Link passHref href="/manage">
+            <span className="tag tag-white ml-4 mt-2 hover-up cursor-pointer ">
+              Set PrizeDistribution Parameters
+            </span>
+          </Link>
         </div>
         <div className="col-span-6 flex justify-end">
-          <NetworkSelector />
+          <ChainSwitch />
         </div>
       </div>
-      <PrizeDistributionHistoryCurrentTable address={address} />
+      <TableDrawAndPrizeDistribution address={address} />
     </div>
   );
 }

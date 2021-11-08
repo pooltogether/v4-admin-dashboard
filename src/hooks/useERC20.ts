@@ -48,8 +48,9 @@ export const useERC20Calls = (address: string, methods = [], inputs = []) => {
  * @param {Object} props
  */
 export const useERC20Function = (address: string, method: string, details: any) => {
+  const contract = useGetContractERC20(address);
   const { send, state } =
-    useContractFunction(useGetContractERC20(address), method, {
+    useContractFunction(contract, method, {
       transactionName: {
         label: details.name,
         description: details.description,
@@ -58,5 +59,6 @@ export const useERC20Function = (address: string, method: string, details: any) 
         address,
       },
     }) ?? [];
-  return [send, state];
+
+  return [send, state, contract];
 };

@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { useState } from 'react';
 
+import { bridgeMainnet, bridgeTestnet } from '@src/config/bridging';
 import { useEthers, getChainName } from '@usedapp/core';
 import classNames from 'classnames';
 import Switch from 'react-switch';
@@ -10,44 +11,33 @@ interface NetworkSelectorProps {
 }
 
 export const NetworkSelector = ({ className }: NetworkSelectorProps) => {
-  const { chainId } = useEthers();
-
+  const { chainId, library } = useEthers();
   const chainName = getChainName(chainId);
-  const styleBase = classNames('flex items-center');
-
-  const networks = [
-    {
-      label: 'Ethereum (1)',
-      chainId: 1,
-      image: '/assets/networks/ethereum.png',
-    },
-    {
-      label: 'Polygon (137)',
-      chainId: 137,
-      image: '/assets/networks/polygon.png',
-    },
-  ];
-
-  const networksTestnet = [
-    {
-      label: 'Ethereum (4)',
-      chainId: 1,
-      image: '/assets/networks/ethereum.png',
-    },
-    {
-      label: 'Polygon (8007)',
-      chainId: 8007,
-      image: '/assets/networks/polygon.png',
-    },
-  ];
-
+  const styleBase = classNames(className, 'flex items-center');
+  const networks = bridgeMainnet;
+  const networksTestnet = bridgeTestnet;
   const [isChecked, isCheckedSet] = useState<boolean>(false);
-
   const handleChange = () => {
     isCheckedSet(!isChecked);
   };
 
   const networksSelected = isChecked ? networksTestnet : networks;
+
+  const handleChangeNetwork = async (chainIdChange: any, chainParams: any) => {
+    try {
+      await library?.provider.request({
+        method: 'wallet_switchEthereumChain',
+        params: [{ chainId: `0x${chainIdChange}` }],
+      });
+    } catch (error) {
+      if (error.code === 4902) {
+        await library?.provider.request({
+          method: 'wallet_addEthereumChain',
+          params: chainParams,
+        });
+      }
+    }
+  };
 
   return (
     <div className={styleBase}>
@@ -58,7 +48,17 @@ export const NetworkSelector = ({ className }: NetworkSelectorProps) => {
         </label>
       </div>
       {networksSelected.map((network, idx) => (
-        <Network key={idx} {...network} currentNetwork={chainName} currentChainId={chainId} />
+        <Network
+          key={idx}
+          {...network}
+          chainId={network.chainId}
+          chainName={network.chainName}
+          chainType={network.chainType}
+          chain={network.chain}
+          currentChainName={chainName}
+          currentChainId={chainId}
+          handleChangeNetwork={handleChangeNetwork}
+        />
       ))}
     </div>
   );
@@ -69,17 +69,23 @@ interface NetworkProps {
   label?: string;
   image?: string;
   chainId?: string | number;
-  currentNetwork?: string;
+  chainName?: string | number;
+  chainType?: string | number;
+  currentChainName?: string;
+  chain?: any;
   currentChainId?: string | number;
+  handleChangeNetwork: Function;
 }
 
 const Network = ({
   className,
   label,
   image,
+  chainName,
   chainId,
+  chain,
   currentChainId,
-  currentNetwork,
+  handleChangeNetwork,
 }: NetworkProps) => {
   const styleBase = classNames(
     className,
@@ -89,10 +95,12 @@ const Network = ({
       'bg-purple-800 text-white': chainId === currentChainId,
     }
   );
-
   return (
-    <div className={styleBase}>
-      <img alt={label} src={image} width={22} /> <span className="font-bold ml-2">{label}</span>
+    <div className={styleBase} onClick={() => handleChangeNetwork(chainId, chain)}>
+      <img alt={label} src={image} width={22} />{' '}
+      <span className="font-bold ml-2">
+        {chainName} <span className="font-normal text-xs">(ID: {chainId})</span>
+      </span>
     </div>
   );
 };
