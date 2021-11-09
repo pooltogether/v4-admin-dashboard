@@ -38,7 +38,7 @@ export const ModalLarge = ({ children, className, hideModal, position = 'right' 
 
   // Style Panel
   const stylePanel = classnames(
-    'fixed top-32 bottom-32 left-1/4 bg-white p-10 w-100 w-2/4 z-100 rounded-xl shadow-xl',
+    'fixed top-20 bottom-20 left-1/4 bg-white p-10 w-100 w-2/4 z-100 rounded-xl shadow-xl',
     className
   );
 
@@ -57,7 +57,7 @@ export const ModalLarge = ({ children, className, hideModal, position = 'right' 
         style={{ ...animateBackground, zIndex: 999 }}
       />
       <animated.div className={stylePanel} style={{ ...animatePanel, zIndex: 1000 }}>
-        <div className="overflow-auto">{children}</div>
+        <div className="overflow-auto h-full">{children}</div>
       </animated.div>
     </>
   );

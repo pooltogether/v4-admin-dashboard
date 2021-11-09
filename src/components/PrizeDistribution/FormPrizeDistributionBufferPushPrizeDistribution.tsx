@@ -2,8 +2,8 @@
 import React from 'react';
 
 import { TransactionErrorNotification } from '@src/components/Web3/Transaction/TransactionErrorNotification';
+import { usePrizeDistributionBufferFunction } from '@src/hooks/contracts/usePrizeDistributionBuffer';
 import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
-import { usePrizeDistributionBufferFunction } from '@src/hooks/usePrizeDistributionBuffer';
 import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
 

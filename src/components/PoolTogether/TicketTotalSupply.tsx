@@ -1,4 +1,4 @@
-import { useERC20Call } from '@src/hooks/useERC20';
+import { useERC20Call } from '@src/hooks/contracts/useERC20';
 import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
 import { transformAndCommifyBigNumber } from '@src/utils/convert';
 import { isAddress } from '@src/utils/is';

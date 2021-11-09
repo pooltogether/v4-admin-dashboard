@@ -1,5 +1,5 @@
+import { useOwnableCall } from '@src/hooks/contracts/useOwnable';
 import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
-import { useOwnableCall } from '@src/hooks/useOwnable';
 import { isAddress } from '@src/utils/is';
 import PropTypes from 'prop-types';
 

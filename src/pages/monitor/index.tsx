@@ -11,18 +11,14 @@ export default function PrizeDistributions() {
   return (
     <div className="mt-0">
       <div className="grid grid-cols-12 pb-4">
-        <div className="col-span-6 flex items-center">
-          <h3 className="font-light text-3xl m-0">
-            <span className="text-gray-600">Status:</span>{' '}
-            <span className="font-bold text-purple-700">Success</span>
-          </h3>
+        <div className="col-span-4 flex items-center">
           <Link passHref href="/manage">
             <span className="tag tag-white ml-4 mt-2 hover-up cursor-pointer ">
               Set PrizeDistribution Parameters
             </span>
           </Link>
         </div>
-        <div className="col-span-6 flex justify-end">
+        <div className="col-span-8 flex justify-end">
           <ChainSwitch />
         </div>
       </div>

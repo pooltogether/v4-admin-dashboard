@@ -2,6 +2,7 @@ import { InjectedConnector } from '@web3-react/injected-connector';
 import { NetworkConnector } from '@web3-react/network-connector';
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
 import { WalletLinkConnector } from '@web3-react/walletlink-connector';
+import { SafeAppConnector } from '@gnosis.pm/safe-apps-web3-react';
 
 import { SUPPORTED_CHAINS } from './constants';
 import {
@@ -38,3 +39,10 @@ export const walletlink = new WalletLinkConnector({
   appName: 'PoolTogether',
   appLogoUrl: '/favicon.png',
 });
+
+export let safeapp: any;
+if(typeof window !== 'undefined') {
+  safeapp = new SafeAppConnector();
+}
+
+// export safeapp;

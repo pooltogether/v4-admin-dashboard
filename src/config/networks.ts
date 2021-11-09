@@ -14,7 +14,8 @@ export const NETWORK_URL_GOERLI =
   process.env.NEXT_PUBLIC_NETWORK_URL_GOERLI || `https://goerli.infura.io/v3/${INFURA_ID}`;
 
 export const NETWORK_URL_POLYGON_MAINNET =
-  process.env.NEXT_PUBLIC_NETWORK_URL_POLYGON_MAINNET || 'https://polygon-rpc.com/';
+  process.env.NEXT_PUBLIC_NETWORK_URL_POLYGON_MAINNET ||
+  'https://polygon-mainnet.infura.io/v3/0b68f87acec2479a9d6106ffb0f2c16d';
 
 export const NETWORK_URL_POLYGON_MUMBAI =
   process.env.NEXT_PUBLIC_NETWORK_URL_POLYGON_MUMBAI || 'https://rpc-mumbai.maticvigil.com';

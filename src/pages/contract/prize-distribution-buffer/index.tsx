@@ -14,8 +14,8 @@ const ContractPrizeDistributionBuffer = () => {
       />
       <div className="grid grid-cols-12 pb-4">
         <div className="col-span-6 flex items-center">
-          <button className="btn btn-purple">Add PrizeDistribution</button>
-          <button className="btn btn-red ml-2">Set PrizeDistribution</button>
+          {/* <button className="btn btn-purple">Add PrizeDistribution</button> */}
+          {/* <button className="btn btn-red ml-2">Set PrizeDistribution</button> */}
         </div>
         <div className="col-span-6 flex justify-end">
           <ChainSwitch />

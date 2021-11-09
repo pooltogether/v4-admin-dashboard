@@ -2,8 +2,9 @@
 import React from 'react';
 
 import { TransactionErrorNotification } from '@src/components/Web3/Transaction/TransactionErrorNotification';
+import { usePrizeDistributionBufferFunction } from '@src/hooks/contracts/usePrizeDistributionBuffer';
 import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
-import { usePrizeDistributionBufferFunction } from '@src/hooks/usePrizeDistributionBuffer';
+import { PrizeDistribution } from '@src/types';
 import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
 
@@ -12,23 +13,31 @@ interface FormPrizeDistributionBufferSetPrizeDistributionProps {
   label?: string;
   labelButton?: string | any;
   onSubmitHandle?: (data: any) => void;
+  defaultValues?: {
+    drawId?: string | number;
+    prizeDistribution: PrizeDistribution;
+  };
 }
 
 export function FormPrizeDistributionBufferSetPrizeDistribution({
   className,
   label,
   labelButton = 'Submit',
+  defaultValues,
   onSubmitHandle,
 }: FormPrizeDistributionBufferSetPrizeDistributionProps) {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm({
+    defaultValues,
+  });
   const address = useGetContractAddress('PrizeDistributionBuffer');
   const [execute, state] = usePrizeDistributionBufferFunction(address, 'setPrizeDistribution', {});
   const styleButton = classNames('btn btn-green font-thin text-lg mt-4 w-full');
   const styleLabel = classNames('font-semibold mb-2 text-4xl');
 
   const onSubmit = (data: any) => {
+    const { drawId, prizeDistribution } = data;
+
     const {
-      drawId,
       bitRangeSize,
       matchCardinality,
       startTimestampOffset,
@@ -37,7 +46,15 @@ export function FormPrizeDistributionBufferSetPrizeDistribution({
       expiryDuration,
       numberOfPicks,
       prize,
-    } = data;
+      tiers,
+    } = prizeDistribution;
+
+    let tiersParse;
+    if (typeof tiers === 'string') {
+      tiersParse = tiers.split(',');
+    } else {
+      tiersParse = tiers;
+    }
 
     const params = {
       bitRangeSize,
@@ -47,7 +64,7 @@ export function FormPrizeDistributionBufferSetPrizeDistribution({
       maxPicksPerUser,
       expiryDuration,
       numberOfPicks,
-      tiers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      tiers: tiersParse,
       prize,
     };
 
@@ -83,7 +100,7 @@ export function FormPrizeDistributionBufferSetPrizeDistribution({
             <label className="label">Bit Range Size</label>
             <input
               className="input input-default"
-              {...register('bitRangeSize')}
+              {...register('prizeDistribution.bitRangeSize')}
               placeholder="BitRangeSize"
             />
           </div>
@@ -91,7 +108,7 @@ export function FormPrizeDistributionBufferSetPrizeDistribution({
             <label className="label">Match Cardinality</label>
             <input
               className="input input-default"
-              {...register('matchCardinality')}
+              {...register('prizeDistribution.matchCardinality')}
               placeholder="Match Cardinality"
             />
           </div>
@@ -99,7 +116,7 @@ export function FormPrizeDistributionBufferSetPrizeDistribution({
             <label className="label">Start Timestamp Offset</label>
             <input
               className="input input-default"
-              {...register('startTimestampOffset')}
+              {...register('prizeDistribution.startTimestampOffset')}
               placeholder="Start Timestamp Offset"
             />
           </div>
@@ -107,7 +124,7 @@ export function FormPrizeDistributionBufferSetPrizeDistribution({
             <label className="label">End Timestamp Offset</label>
             <input
               className="input input-default"
-              {...register('endTimestampOffset')}
+              {...register('prizeDistribution.endTimestampOffset')}
               placeholder="End Timestamp Offset"
             />
           </div>
@@ -118,7 +135,7 @@ export function FormPrizeDistributionBufferSetPrizeDistribution({
             <label className="label">Max Pickers Per User</label>
             <input
               className="input input-default"
-              {...register('maxPicksPerUser')}
+              {...register('prizeDistribution.maxPicksPerUser')}
               placeholder="Max Picks Per User"
             />
           </div>
@@ -126,7 +143,7 @@ export function FormPrizeDistributionBufferSetPrizeDistribution({
             <label className="label">Expiry Duration</label>
             <input
               className="input input-default"
-              {...register('expiryDuration')}
+              {...register('prizeDistribution.expiryDuration')}
               placeholder="Expiry Duration"
             />
           </div>
@@ -134,14 +151,27 @@ export function FormPrizeDistributionBufferSetPrizeDistribution({
             <label className="label">Number of Picks</label>
             <input
               className="input input-default"
-              {...register('numberOfPicks')}
+              {...register('prizeDistribution.numberOfPicks')}
               placeholder="Number of Picks"
             />
           </div>
           <div className="col-span-3">
             <label className="label">Prize</label>
-            <input className="input input-default" {...register('prize')} placeholder="Prize" />
+            <input
+              className="input input-default"
+              {...register('prizeDistribution.prize')}
+              placeholder="Prize"
+            />
           </div>
+        </div>
+
+        <div className="col-span-3">
+          <label className="label">Tiers</label>
+          <input
+            className="input input-default"
+            {...register('prizeDistribution.tiers')}
+            placeholder="Tiers"
+          />
         </div>
 
         <button className={styleButton} type="submit">

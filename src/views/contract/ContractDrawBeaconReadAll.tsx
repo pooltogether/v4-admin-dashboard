@@ -18,6 +18,7 @@ const ContractDrawBeacon = () => {
     'beaconPeriodRemainingSeconds',
     'beaconPeriodEndAt',
     'getNextDrawId',
+    'getBeaconPeriodSeconds',
     'getLastRngLockBlock',
     'getLastRngRequestId',
     'getRngTimeout',

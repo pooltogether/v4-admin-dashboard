@@ -14,7 +14,6 @@ interface ToastProps {
 }
 
 const Toast = ({ label, description, address, state, tid }: ToastProps) => {
-  console.log(tid, 'tidtid');
   return (
     <>
       <div

@@ -4,8 +4,6 @@ import React from 'react';
 import { AppLogo } from '@src/components/App/AppLogo';
 import { MenuItemSidebar } from '@src/components/Layout/Menu/MenuItemSidebar';
 import {
-  Database,
-  Info,
   Activity,
   GitHub,
   Anchor,
@@ -41,13 +39,13 @@ export default function Sidebar() {
             <CheckCircle className="text-purple-500 mr-1" width={32} />
           </h6>
           <ul className="md:flex-col md:min-w-full flex flex-col list-none">
-            <MenuItemSidebar
+            {/* <MenuItemSidebar
               label="Overview"
               href="/dashboard"
               exactMatch
               defaultStyle
               image={<Info width={16} />}
-            />
+            /> */}
             {/* <MenuItemSidebar
               label="Assets"
               href="/assets"
@@ -60,38 +58,17 @@ export default function Sidebar() {
               defaultStyle
               image={<Activity width={16} />}
             />
-            <MenuItemSidebar
+            {/* <MenuItemSidebar
               label="Manage"
               href="/manage"
               defaultStyle
               image={<Database width={16} />}
-            />
+            /> */}
             <MenuItemSidebar
               label="Treasury"
               href="/treasury"
               defaultStyle
               image={<DollarSign width={16} />}
-            />
-          </ul>
-
-          {/* Divider */}
-          <hr className="my-4 md:min-w-full" />
-          <h6 className="md:min-w-full text-purple-800 text-md uppercase font-bold pt-1 pb-4 no-underline flex items-center justify-between">
-            <span className="ml-2">Calulators</span>
-            <Navigation className="text-purple-500 mr-1" width={32} />
-          </h6>
-          <ul className="md:flex-col md:min-w-full flex flex-col list-none p-0 m-0">
-            <MenuItemSidebar
-              label="Claim Verification"
-              href="/calculate/claim-verification"
-              defaultStyle
-              image={<Anchor width={16} />}
-            />
-            <MenuItemSidebar
-              label="Network Distributions"
-              href="/calculate/network-distributions"
-              defaultStyle
-              image={<BarChart width={16} />}
             />
           </ul>
 
@@ -125,6 +102,27 @@ export default function Sidebar() {
               href="/contract/prize-distribution-buffer"
               defaultStyle
               image={<Anchor width={16} />}
+            />
+          </ul>
+
+          {/* Divider */}
+          <hr className="my-4 md:min-w-full" />
+          <h6 className="md:min-w-full text-purple-800 text-md uppercase font-bold pt-1 pb-4 no-underline flex items-center justify-between">
+            <span className="ml-2">Calulators</span>
+            <Navigation className="text-purple-500 mr-1" width={32} />
+          </h6>
+          <ul className="md:flex-col md:min-w-full flex flex-col list-none p-0 m-0">
+            <MenuItemSidebar
+              label="Claim Verification"
+              href="/calculate/claim-verification"
+              defaultStyle
+              image={<Anchor width={16} />}
+            />
+            <MenuItemSidebar
+              label="Network Distributions"
+              href="/calculate/network-distributions"
+              defaultStyle
+              image={<BarChart width={16} />}
             />
           </ul>
           {/* Divider */}

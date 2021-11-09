@@ -1,6 +1,7 @@
 import { Contract } from '@ethersproject/contracts';
-import { useGetContract } from './useGetContract'
 import { InterfaceTsunamiDrawCalculator } from '@src/contracts/interfaces';
+
+import { useGetContract } from '../useGetContract';
 
 /**
  * @name useGetContractTsunamiDrawCalculator

@@ -7,12 +7,16 @@ import { Response, DEFAULT_STATE } from './types';
 
 function mergeDrawsAndPrizeDistributions(draws: any, prizeDistributions: any) {
   const result = draws.map((draw: any) => {
-    const prizeDistribution = prizeDistributions.find(
-      (prizeDistributionA: any) => prizeDistributionA.drawId === draw.id
-    );
+    const prizeDistribution = prizeDistributions.find((prizeDistributionA: any) => {
+      // console.log('TEST 3', prizeDistributionA, draw);
+      return prizeDistributionA.drawId === draw.drawId;
+    });
+    console.log(prizeDistribution, 'FIND prizeDistribution');
+    // console.log('mergeDrawsAndPrizeDistributions', prizeDistributions, draws, prizeDistribution);
     return { drawId: draw.drawId, draw, prizeDistribution };
   });
 
+  console.log(result, 'resultresult');
   return result;
 }
 
@@ -20,11 +24,14 @@ export function useGetDrawsAndPrizeDistributions() {
   const [response, setResponse] = useState<Response>(DEFAULT_STATE);
   const draws = useGetDraws();
   const prizeDistributions = useGetPrizeDistributions();
+
+  console.log(draws, 'drawsdrawsdraws');
+
   useEffect(() => {
     if (draws.status === 1 && prizeDistributions.status === 1) {
       setResponse({
         status: 1,
-        data: mergeDrawsAndPrizeDistributions(draws.data[0], prizeDistributions.data[0]),
+        data: mergeDrawsAndPrizeDistributions(draws.data, prizeDistributions.data),
       });
     }
   }, [draws, prizeDistributions]);

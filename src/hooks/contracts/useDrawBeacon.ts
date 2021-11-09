@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { getAddress, isAddress } from '@ethersproject/address';
 import { InterfaceDrawBeacon } from '@src/contracts/interfaces';
-import { useGetContractDrawBeacon } from '@src/hooks/useGetContractDrawBeacon';
+import { useGetContractDrawBeacon } from '@src/hooks/contracts/useGetContractDrawBeacon';
 import { validateInputs } from '@src/utils/transaction';
 import { useContractCall, useContractCalls, useContractFunction, useEthers } from '@usedapp/core';
 

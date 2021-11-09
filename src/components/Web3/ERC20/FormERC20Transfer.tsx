@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { TransactionErrorNotification } from '@src/components/Web3/Transaction/TransactionErrorNotification';
-import { useERC20Function } from '@src/hooks/useERC20';
+import { useERC20Function } from '@src/hooks/contracts/useERC20';
 import classNames from 'classnames';
 import { utils } from 'ethers';
 import { useForm } from 'react-hook-form';

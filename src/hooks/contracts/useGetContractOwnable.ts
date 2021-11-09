@@ -1,6 +1,6 @@
-import { InterfaceOwnable } from "@src/contracts/interfaces";
+import { InterfaceOwnable } from '@src/contracts/interfaces';
 
-import { useGetContract } from "./useGetContract";
+import { useGetContract } from '../useGetContract';
 
 /**
  * @name useGetContractOwnable

@@ -1,5 +1,5 @@
+import { useManageableCall } from '@src/hooks/contracts/useManageable';
 import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
-import { useManageableCall } from '@src/hooks/useManageable';
 import { isAddress } from '@src/utils/is';
 import PropTypes from 'prop-types';
 

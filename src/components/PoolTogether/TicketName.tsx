@@ -1,4 +1,4 @@
-import { useERC20Call } from '@src/hooks/useERC20';
+import { useERC20Call } from '@src/hooks/contracts/useERC20';
 import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
 import { isAddress } from '@src/utils/is';
 import PropTypes from 'prop-types';

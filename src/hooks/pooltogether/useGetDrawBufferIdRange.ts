@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
+import { Interface } from '@ethersproject/abi';
 import { useSafeContractCall } from '@src/hooks/useSafeContractCall';
 import { range } from '@src/utils/range';
 
-export function useGetDrawBufferIdRange(address: string, abi: any) {
+export function useGetDrawBufferIdRange(address: string, abi: Interface) {
   const [rangeIds, setRange] = useState<number[]>([]);
   const getNewestDraw = useSafeContractCall(address, abi, 'getNewestDraw', []);
   const getOldestDraw = useSafeContractCall(address, abi, 'getOldestDraw', []);
-
   useEffect(() => {
     if (
       getNewestDraw &&

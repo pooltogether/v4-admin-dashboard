@@ -1,19 +1,15 @@
 // @ts-nocheck
 import { getAddress, isAddress } from '@ethersproject/address';
-import { InterfacePrizeDistributionBuffer } from '@src/contracts/interfaces';
-import { useGetContractPrizeDistributionHistory } from '@src/hooks/useGetContractPrizeDistributionHistory';
+import { InterfaceManageable } from '@src/contracts/interfaces';
+import { useGetContractManageable } from '@src/hooks/contracts/useGetContractManageable';
 import { validateInputs } from '@src/utils/transaction';
 import { useContractCall, useContractCalls, useContractFunction, useEthers } from '@usedapp/core';
 
 /**
- * @name usePrizeDistributionBufferCall
+ * @name useManageableCall
  * @param {Object} props
  */
-export const usePrizeDistributionBufferCall = (
-  address: string,
-  method: string,
-  inputs: Array<any> = []
-) => {
+export const useManageableCall = (address: string, method: string, inputs: Array<any> = []) => {
   const { active } = useEthers();
   const [value] =
     useContractCall(
@@ -21,7 +17,7 @@ export const usePrizeDistributionBufferCall = (
         address &&
         isAddress(address) &&
         validateInputs(inputs) && {
-          abi: InterfacePrizeDistributionBuffer,
+          abi: InterfaceManageable,
           address: getAddress(address),
           method,
           args: inputs,
@@ -32,12 +28,12 @@ export const usePrizeDistributionBufferCall = (
 };
 
 /**
- * @name usePrizeDistributionBufferCalls
+ * @name useManageableCalls
  * @param {Object} props
  */
-export const usePrizeDistributionBufferCalls = (address: string, methods = [], inputs = []) => {
+export const useManageableCalls = (address: string, methods = [], inputs = []) => {
   const calls = methods.map((method, index) => ({
-    abi: InterfacePrizeDistributionBuffer,
+    abi: InterfaceManageable,
     address,
     method,
     args: inputs[index],
@@ -48,12 +44,12 @@ export const usePrizeDistributionBufferCalls = (address: string, methods = [], i
 };
 
 /**
- * @name usePrizeDistributionBufferFunction
+ * @name useManageableFunction
  * @param {Object} props
  */
-export const usePrizeDistributionBufferFunction = (address, method, details) => {
+export const useManageableFunction = (address, method, details) => {
   const { send, state } =
-    useContractFunction(useGetContractPrizeDistributionHistory(address), method, {
+    useContractFunction(useGetContractManageable(address), method, {
       transactionName: {
         label: details.name,
         description: details.description,

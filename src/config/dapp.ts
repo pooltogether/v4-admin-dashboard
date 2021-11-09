@@ -9,7 +9,7 @@ import {
 } from './networks';
 
 export const dappConfig: Config = {
-  readOnlyChainId: ChainId.Rinkeby,
+  readOnlyChainId: ChainId.Mainnet,
   readOnlyUrls: {
     [ChainId.Mainnet]: NETWORK_URL_MAINNET,
     [ChainId.Rinkeby]: NETWORK_URL_RINKEBY,

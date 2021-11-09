@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <nav className="grid grid-cols-12 w-full z-10 bg-purple-900 text-white py-4 px-5">
       <div className="col-span-6 flex items-center flex-1 text-white">
-        <AnalyticsOverview className="ml-4" />
+        {/* <AnalyticsOverview className="ml-4" /> */}
       </div>
       <div className="col-span-6 w-full flex justify-end items-center px-2">
         <span className="tag tag-purple-light mr-3">

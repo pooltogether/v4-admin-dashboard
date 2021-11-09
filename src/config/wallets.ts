@@ -1,4 +1,4 @@
-import { injected, walletconnect, walletlink, network } from '@src/config/connectors';
+import { injected, walletconnect, walletlink, safeapp, network } from '@src/config/connectors';
 
 export interface WalletOption {
   label: string;
@@ -29,7 +29,7 @@ export const walletOptions: WalletOption[] = [
   {
     label: 'Gnosis',
     value: 'gnosis',
-    connector: walletconnect,
+    connector: safeapp,
     image: '/assets/wallets/gnosis.svg',
   },
   {

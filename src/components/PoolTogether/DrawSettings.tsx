@@ -1,5 +1,5 @@
+import { usePrizeDistributionBufferCall } from '@src/hooks/contracts/usePrizeDistributionBuffer';
 import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
-import { usePrizeDistributionBufferCall } from '@src/hooks/usePrizeDistributionBuffer';
 import { isAddress } from '@src/utils/is';
 import PropTypes from 'prop-types';
 

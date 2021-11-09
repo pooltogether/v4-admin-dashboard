@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ContractAddressUnavailable } from '@src/components/Web3/Contracts/ContractAddressUnavailable';
-import { useDrawBeaconCalls } from '@src/hooks/useDrawBeacon';
+import { useDrawBeaconCalls } from '@src/hooks/contracts/useDrawBeacon';
 import { useGetContractABI } from '@src/hooks/useGetContractABI';
 import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
 import classNames from 'classnames';

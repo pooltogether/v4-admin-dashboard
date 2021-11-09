@@ -1,8 +1,8 @@
 import { AppInformationPopover } from '@src/components/App/AppInformationPopover';
 import { ContractFunctionCallElement } from '@src/components/Web3/Contracts/ContractFunctionCallElement';
 import { WalletAndContractStateButton } from '@src/components/Web3/WalletAndContractStateButton';
+import { useGetContractDrawBeacon } from '@src/hooks/contracts/useGetContractDrawBeacon';
 import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
-import { useGetContractDrawBeacon } from '@src/hooks/useGetContractDrawBeacon';
 import classNames from 'classnames';
 
 const ExecutionInformation = () => {

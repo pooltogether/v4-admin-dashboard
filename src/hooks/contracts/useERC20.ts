@@ -1,15 +1,15 @@
 // @ts-nocheck
-import { getAddress, isAddress } from "@ethersproject/address";
-import { InterfaceOwnable } from "@src/contracts/interfaces";
-import { useGetContractOwnable } from "@src/hooks/useGetContractOwnable";
-import { validateInputs } from "@src/utils/transaction";
-import { useContractCall, useContractCalls, useContractFunction, useEthers } from "@usedapp/core";
+import { getAddress, isAddress } from '@ethersproject/address';
+import { InterfaceERC20 } from '@src/contracts/interfaces';
+import { useGetContractERC20 } from '@src/hooks/contracts/useGetContractERC20';
+import { validateInputs } from '@src/utils/transaction';
+import { useContractCall, useContractCalls, useContractFunction, useEthers } from '@usedapp/core';
 
 /**
- * @name useOwnableCall
+ * @name useERC20Call
  * @param {Object} props
  */
-export const useOwnableCall = (address: string, method: string, inputs: Array<any> = []) => {
+export const useERC20Call = (address: string, method: string, inputs: Array<any> = []) => {
   const { active } = useEthers();
   const [value] =
     useContractCall(
@@ -17,7 +17,7 @@ export const useOwnableCall = (address: string, method: string, inputs: Array<an
         address &&
         isAddress(address) &&
         validateInputs(inputs) && {
-          abi: InterfaceOwnable,
+          abi: InterfaceERC20,
           address: getAddress(address),
           method,
           args: inputs,
@@ -28,12 +28,12 @@ export const useOwnableCall = (address: string, method: string, inputs: Array<an
 };
 
 /**
- * @name useOwnableCalls
+ * @name useERC20Calls
  * @param {Object} props
  */
-export const useOwnableCalls = (address: string, methods = [], inputs = []) => {
+export const useERC20Calls = (address: string, methods = [], inputs = []) => {
   const calls = methods.map((method, index) => ({
-    abi: InterfaceOwnable,
+    abi: InterfaceERC20,
     address,
     method,
     args: inputs[index],
@@ -44,12 +44,13 @@ export const useOwnableCalls = (address: string, methods = [], inputs = []) => {
 };
 
 /**
- * @name useOwnableFunction
+ * @name useERC20Function
  * @param {Object} props
  */
-export const useOwnableFunction = (address, method, details) => {
+export const useERC20Function = (address: string, method: string, details: any) => {
+  const contract = useGetContractERC20(address);
   const { send, state } =
-    useContractFunction(useGetContractOwnable(address), method, {
+    useContractFunction(contract, method, {
       transactionName: {
         label: details.name,
         description: details.description,
@@ -58,5 +59,6 @@ export const useOwnableFunction = (address, method, details) => {
         address,
       },
     }) ?? [];
-  return [send, state];
+
+  return [send, state, contract];
 };
