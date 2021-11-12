@@ -5,19 +5,21 @@ import { useEthers } from '@usedapp/core';
 
 const debug = require('debug')('web3');
 
-export const useGetContractAddress = (name: string): string => {
+export const useGetContractAddress = (name: string, network?: number): string => {
   const { chainId } = useEthers();
   const [address, setAddress] = useState('');
+
+  const chainIdLookup = network || chainId;
 
   useEffect(() => {
     const contract = Object.keys(ContractMapping).filter(
       (contract) => contract.toLowerCase() === name.toLowerCase()
     )[0];
     if (contract) {
-      setAddress(ContractMapping[contract][chainId]);
+      setAddress(ContractMapping[contract][chainIdLookup]);
     }
-    debug(contract, 'contract');
-  }, [name, chainId]);
+    debug('useGetContractAddress', contract);
+  }, [name, chainIdLookup]);
 
   return address;
 };

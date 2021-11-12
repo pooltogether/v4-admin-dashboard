@@ -38,7 +38,7 @@ export async function computePrizeDistribution(
   const { endTimestampOffset } = prizeTier;
   // console.log(draw, endTimestampOffset);
   const startTime = draw.timestamp - startTimestampOffset;
-  const endTime = draw.timestamp;
+  const endTime = startTime + 86400;
 
   // console.log(endTime, 'endTimeendTime');
 

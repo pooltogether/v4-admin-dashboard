@@ -9,8 +9,6 @@ import { Table } from './TableDrawAndPrizeDistribution.table';
 export const TableDrawAndPrizeDistribution = ({ settings }: ITableDrawAndPrizeDistribution) => {
   const drawsAndPrizeDistributions = useGetDrawsAndPrizeDistributions();
   if (!drawsAndPrizeDistributions.status) return <Loading />;
-
-  console.log('TableDrawAndPrizeDistribution', drawsAndPrizeDistributions.data);
   const reverse = _.reverse(drawsAndPrizeDistributions.data);
   return <Table columns={tableColumns} data={reverse} />;
 };

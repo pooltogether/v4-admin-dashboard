@@ -8,7 +8,8 @@ import computePrizeDistribution from '@src/lib/computePrizeDistribution';
 import { Draw } from '@src/types';
 import { useEthers } from '@usedapp/core';
 
-import { useGetContractAddress } from '../../useGetContractAddress';
+import useValidatePrizeDistributionParameters from './pooltogether/validation/useValidatePrizeDistributionParameters';
+import { useGetContractAddress } from './useGetContractAddress';
 
 interface IuseValidatePrizeDistributionResponse {
   status: number;
@@ -20,17 +21,15 @@ export function useValidatePrizeDistributionParameters(
 ): IuseValidatePrizeDistributionResponse {
   const { chainId } = useEthers();
 
-  const l2LookupId = chainId === 1 ? 137 : 80001;
   const l2LookupProvider = chainId === 1 ? NETWORK_URL_POLYGON_MAINNET : NETWORK_URL_POLYGON_MUMBAI;
 
   const [response, setReponse] = useState<IuseValidatePrizeDistributionResponse>({
     status: 0,
     data: false,
   });
-
   const addressPrizeTierHistoryL1 = useGetContractAddress('PrizeTierHistory');
   const addressTicketL1 = useGetContractAddress('Ticket');
-  const addressTicketL2 = useGetContractAddress('Ticket', l2LookupId);
+  const addressTicketL2 = useGetContractAddress('Ticket');
   const L2Provider = useJsonRpcProvider(l2LookupProvider);
   const PrizeTierHistoryL1 = useGetContract(InterfacePrizeTierHistory, addressPrizeTierHistoryL1);
   const TicketL1 = useGetContract(InterfaceTicket, addressTicketL1);
@@ -48,10 +47,10 @@ export function useValidatePrizeDistributionParameters(
         );
         setReponse(calculated);
       } catch (error) {
-        console.log(error, 'errror');
+        // console.log(error, 'errror');
       }
     })();
-  }, [PrizeTierHistoryL1, TicketL1, TicketL2, draw]);
+  }, [TicketL1, TicketL2, draw, prizeDistribution]);
 
   return response;
 }

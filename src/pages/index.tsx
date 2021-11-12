@@ -27,6 +27,7 @@ const Index = () => {
           <ChainSwitch />
         </div>
       </div>
+      {/* <FormPrizeDistributorSetDrawCalculator /> */}
       <ContractPrizeTierHistoryReadAll />
       <ContractTicketReadAll />
       <ContractDrawBeaconReadAll />

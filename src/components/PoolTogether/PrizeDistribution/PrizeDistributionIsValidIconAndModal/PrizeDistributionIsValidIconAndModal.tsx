@@ -1,13 +1,6 @@
-import { useEffect } from 'react';
-
 import { AppInformationPopover } from '@src/components/App/AppInformationPopover';
 import { ModalSetPrizeDistribution } from '@src/components/PoolTogether/PrizeDistribution/ModalSetPrizeDistribution';
-import { NETWORK_URL_POLYGON_MAINNET } from '@src/config/networks';
-import { InterfacePrizeTierHistory, InterfaceTicket } from '@src/contracts/interfaces';
-import { useGetContract } from '@src/hooks/useGetContract';
-import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
-import useJsonRpcProvider from '@src/hooks/useJsonRpcProvider';
-import computePrizeDistribution from '@src/lib/computePrizeDistribution';
+import { useValidatePrizeDistributionParameters } from '@src/hooks/pooltogether/validation/useValidatePrizeDistributionParameters';
 import { Draw } from '@src/types';
 import classNames from 'classnames';
 import { CheckCircle, AlertTriangle } from 'react-feather';
@@ -27,37 +20,9 @@ export const PrizeDistributionIsValidIconAndModal = ({
   draw,
   prizeDistribution,
 }: PrizeDistributionIsValidIconAndModalProps) => {
-  const address = useGetContractAddress('PrizeTierHistory');
-  // const getPrizeTierData =
-  //   useSafeContractCall(address, InterfacePrizeTierHistory, 'getPrizeTier', [drawId]) ?? [];
+  const validationState = useValidatePrizeDistributionParameters(draw);
 
-  const L2Provider = useJsonRpcProvider(NETWORK_URL_POLYGON_MAINNET);
-  const PrizeTierHistoryL1 = useGetContract(InterfacePrizeTierHistory, address);
-  const TicketL1 = useGetContract(InterfaceTicket, '0xdd4d117723C257CEe402285D3aCF218E9A8236E1');
-  const TicketL2 = useGetContract(
-    InterfaceTicket,
-    '0x6a304dFdb9f808741244b6bfEe65ca7B3b3A6076',
-    L2Provider
-  );
-
-  useEffect(() => {
-    (async () => {
-      try {
-        // console.log(draw, PrizeTierHistoryL1, TicketL1, TicketL2, 'drawdraw');
-        const calculated = await computePrizeDistribution(
-          draw,
-          PrizeTierHistoryL1,
-          TicketL1,
-          TicketL2
-        );
-      } catch (error) {
-        // console.log(error, 'errror');
-      }
-    })();
-  }, [TicketL1, TicketL2, draw, prizeDistribution]);
-
-  // console.log(getPrizeTierData, 'datadata');
-  // console.log(prizeDistribution, 'prizeDistribution');
+  console.log(validationState, 'validationStatevalidationState');
 
   const isValid = false;
   const styleBase = classNames(className, '');
