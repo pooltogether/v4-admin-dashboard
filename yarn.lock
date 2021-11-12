@@ -2731,6 +2731,10 @@
   resolved "https://registry.yarnpkg.com/@pooltogether/v4-periphery/-/v4-periphery-1.0.0.tgz#a24f5acee41b1673475ab6d5f0f5f4e32974445d"
   integrity sha512-pLoVvNBS94X0NWdukZjXNV0nlJU39LqFmH9ms0MpQAbYvlt8TCAx/JS6/a9ePE4rTH7qlwcJC/QneGuIZNct0g==
 
+"@pooltogether/v4-pool-data@pooltogether/v4-pool-data":
+  version "1.1.0"
+  resolved "git+ssh://git@github.com/pooltogether/v4-pool-data.git#9b646a606b2f88878453307d5fa2bfa10a5e9d15"
+
 "@pooltogether/v4-testnet@^1.0.0-beta.12":
   version "1.0.0-beta.12"
   resolved "https://registry.yarnpkg.com/@pooltogether/v4-testnet/-/v4-testnet-1.0.0-beta.12.tgz#63edea277b3a4fc28fe9e86ab0b47420d7e84a08"

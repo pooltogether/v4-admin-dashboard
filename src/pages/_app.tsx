@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
-
 import { Providers } from '../components/Providers';
+import '@src/config/poolTogetherV4'; 
 import '../styles/main.css';
 import '../styles/app.css';
 
