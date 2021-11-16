@@ -7,10 +7,12 @@ export const PrizeDistributionIsValidInformationPopover = ({
 }: PrizeDistributionIsValidInformationPopoverProps) => {
   return (
     <div className="max-w-md ml-2">
-      <h3 className="font-bold text-lg">Validate PrizeDistribution Parameters</h3>
+      <h3 className="font-bold text-lg">PrizeDistribution Parameters Valid</h3>
       <p className="text-sm text-gray-600">
-        The PrizeDistribution parameters are compared to the PrizeTierHistory parameters to ensure
-        that the PrizeDistribution has been correctly set.
+        The PrizeDistribution parameters have been computed locally and compared to the production parameters.
+      </p>
+      <p className="text-sm text-gray-600 mt-2">
+        <span className='font-bold'>Everything is matching as expected.</span>
       </p>
       <div className="grid grid-cols-2 gap-x-2 mt-3">
         <span className="text-gray-600 block">
