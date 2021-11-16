@@ -4,7 +4,7 @@ import { computePrizeDistribution } from '@pooltogether/v4-js';
 import { AppInformationPopover } from '@src/components/App/AppInformationPopover';
 import { ModalSetPrizeDistribution } from '@src/components/PoolTogether/PrizeDistribution/ModalSetPrizeDistribution';
 import { convertPrizeDistributionTupleToFormDefaults } from '@src/lib/convertPrizeDistributionTupleToFormDefaults';
-import { Draw } from '@src/types';
+import { Draw } from '@pooltogether/v4-js/dist/types';
 import classNames from 'classnames';
 import { isEqual } from 'lodash';
 import { CheckCircle, AlertTriangle } from 'react-feather';
@@ -35,11 +35,6 @@ export const PrizeDistributionIsValidIconAndModal = ({
       );
       const resultsWithDrawId = { ...results, drawId: Number(drawId) };
       const calculatedMatchesCurrentSettings = isEqual(resultsWithDrawId, prizeDistribution);
-      console.log(resultsWithDrawId, prizeDistribution);
-      console.log(
-        calculatedMatchesCurrentSettings,
-        'calculatedMatchesCurrentSettingscalculatedMatchesCurrentSettings'
-      );
       setIsValidPrizeDistribution(calculatedMatchesCurrentSettings);
     })();
   }, []);
