@@ -26,15 +26,15 @@ export const bridgeMainnet = [
     chainType: 'mainnet',
     chain: polygonMainnet,
   },
-  {
-    label: 'Binance Smart Chain',
-    image: '/assets/networks/binance.png',
-    chainNetwork: 'Binance',
-    chainName: 'Binance',
-    chainId: 56,
-    chainType: 'mainnet',
-    chain: binanceMainnet,
-  },
+  // {
+  //   label: 'Binance Smart Chain',
+  //   image: '/assets/networks/binance.png',
+  //   chainNetwork: 'Binance',
+  //   chainName: 'Binance',
+  //   chainId: 56,
+  //   chainType: 'mainnet',
+  //   chain: binanceMainnet,
+  // },
 ];
 
 export const bridgeTestnet = [
@@ -56,15 +56,15 @@ export const bridgeTestnet = [
     chainType: 'testnet',
     chain: polygonMumbai,
   },
-  {
-    label: 'Binance Smart Chain',
-    image: '/assets/networks/binance.png',
-    chainNetwork: 'Binance',
-    chainName: 'Testnet',
-    chainId: 97,
-    chainType: 'testnet',
-    chain: binanceTestnet,
-  },
+  // {
+  //   label: 'Binance Smart Chain',
+  //   image: '/assets/networks/binance.png',
+  //   chainNetwork: 'Binance',
+  //   chainName: 'Testnet',
+  //   chainId: 97,
+  //   chainType: 'testnet',
+  //   chain: binanceTestnet,
+  // },
 ];
 
 const bridges = {
