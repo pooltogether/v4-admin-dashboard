@@ -10,6 +10,7 @@ import { isEqual } from 'lodash';
 import { CheckCircle, AlertTriangle } from 'react-feather';
 
 import { PrizeDistributionIsValidInformationPopover } from './PrizeDistributionIsValidInformationPopover';
+import { PrizeDistributionIsNotValidInformationPopover } from './PrizeDistributionIsNotValidInformationPopover';
 
 interface PrizeDistributionIsValidIconAndModalProps {
   className?: string;
@@ -45,24 +46,34 @@ export const PrizeDistributionIsValidIconAndModal = ({
       <span className="tag tag-white -ml-8 cursor-pointer shadow-sm top-0 hover-up hover:border-b-2">
         <div className="flex items-center">
           {!!isValidPrizeDistribution && (
-            <div className="flex items-center mr-2">
-              <CheckCircle className="text-green-500 mr-2" width={18} />
-              <span className="">Valid PrizeDistribution</span>
-            </div>
+           <>
+              <div className="flex items-center mr-2">
+                <CheckCircle className="text-green-500 mr-2" width={18} />
+                <span className="">Valid PrizeDistribution</span>
+              </div>
+              <AppInformationPopover
+                content={<PrizeDistributionIsValidInformationPopover isValid={true} />}
+                size={12}
+                positions={['right', 'top']}
+              />
+           </>
           )}
           {!isValidPrizeDistribution && (
-            <ModalSetPrizeDistribution drawId={drawId} prizeDistribution={prizeDistribution}>
-              <div className="flex items-center mr-2">
-                <AlertTriangle className="text-red-500 mr-2" width={18} />
-                <span className="">Requires Attention</span>
-              </div>
-            </ModalSetPrizeDistribution>
+            <>
+              <ModalSetPrizeDistribution drawId={drawId} prizeDistribution={prizeDistribution}>
+                <div className="flex items-center mr-2">
+                  <AlertTriangle className="text-red-500 mr-2" width={18} />
+                  <span className="">Requires Attention</span>
+                </div>
+              </ModalSetPrizeDistribution>
+              <AppInformationPopover
+                content={<PrizeDistributionIsNotValidInformationPopover isValid={true} />}
+                size={12}
+                positions={['right', 'top']}
+              />
+            </>
           )}
-          <AppInformationPopover
-            content={<PrizeDistributionIsValidInformationPopover isValid={true} />}
-            size={12}
-            positions={['right', 'top']}
-          />
+          
         </div>
       </span>
     </div>
