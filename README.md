@@ -104,7 +104,7 @@ export default ContractDrawBeacon;
 ```
 
 
-## Developemt
+## Development
 ```.sh
 yarn dev
 ```
@@ -116,7 +116,6 @@ To test the build run
 ```.sh
 yarn build
 ```
-
 
 # Changelog
 
