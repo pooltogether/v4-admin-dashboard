@@ -38,7 +38,6 @@ export function useValidatePrizeDistributionParameters(
   useEffect(() => {
     (async () => {
       try {
-        // console.log(draw, PrizeTierHistoryL1, TicketL1, TicketL2, 'drawdraw');
         const calculated = await computePrizeDistribution(
           draw,
           PrizeTierHistoryL1,
@@ -46,9 +45,7 @@ export function useValidatePrizeDistributionParameters(
           TicketL2
         );
         setReponse(calculated);
-      } catch (error) {
-        // console.log(error, 'errror');
-      }
+      } catch (error) {}
     })();
   }, [TicketL1, TicketL2, draw, prizeDistribution]);
 

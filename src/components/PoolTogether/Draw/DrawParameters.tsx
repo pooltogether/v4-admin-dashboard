@@ -8,11 +8,11 @@ export const DrawParameters = ({ value }: { value: any }) => {
   return (
     <div className="">
       <JustifyBetween>
-        <span className="text-sm">DrawId:</span>
+        <span className="text-sm">drawId:</span>
         <span className="text-sm"> {value.drawId}</span>
       </JustifyBetween>
       <JustifyBetween>
-        <span className="text-sm">Random Number:</span>
+        <span className="text-sm">winningRandomNumber:</span>
         <span className="text-sm font">
           {shortenAddress(value.winningRandomNumber.toString(), 10)}
         </span>

@@ -33,14 +33,10 @@ export async function computePrizeDistribution(
   const startTimestampOffset = beaconPeriod;
 
   const decimals = await ticketsToCalculate.decimals();
-  // console.log(decimals, 'decimalsdecimalsdecimals');
 
   const { endTimestampOffset } = prizeTier;
-  // console.log(draw, endTimestampOffset);
   const startTime = draw.timestamp - startTimestampOffset;
   const endTime = startTime + 86400;
-
-  // console.log(endTime, 'endTimeendTime');
 
   const ticketAverage = await ticketsToCalculate.getAverageTotalSuppliesBetween(
     [startTime],
