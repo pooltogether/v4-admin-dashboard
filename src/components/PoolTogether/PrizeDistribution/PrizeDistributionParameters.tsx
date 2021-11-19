@@ -22,23 +22,23 @@ export const PrizeDistributionParameters = ({ value }: { value: any }) => {
   return (
     <div className="">
       <JustifyBetween>
-        <span className="text-sm">DrawId:</span>
+        <span className="text-sm">drawId:</span>
         <span className="text-sm"> {value.drawId}</span>
       </JustifyBetween>
       <JustifyBetween>
-        <span className="text-sm">Bitrange:</span>
+        <span className="text-sm">bitRangeSize:</span>
         <span className="text-sm"> {value.bitRangeSize}</span>
       </JustifyBetween>
       <JustifyBetween>
-        <span className="text-sm">Cardinality:</span>
+        <span className="text-sm">matchCardinality:</span>
         <span className="text-sm">{value.matchCardinality}</span>
       </JustifyBetween>
       <JustifyBetween>
-        <span className="text-sm">Bitrange:</span>
+        <span className="text-sm">bitRangeSize:</span>
         <span className="text-sm"> {value.bitRangeSize}</span>
       </JustifyBetween>
       <JustifyBetween>
-        <span className="text-sm">Max Picks Per User:</span>
+        <span className="text-sm">maxPicksPerUser:</span>
         <span className="text-sm"> {value.maxPicksPerUser}</span>
       </JustifyBetween>
       <JustifyBetween>
