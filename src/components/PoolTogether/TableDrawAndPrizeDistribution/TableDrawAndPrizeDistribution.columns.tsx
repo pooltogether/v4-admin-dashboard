@@ -6,6 +6,7 @@ import EpochToRelativeDate from '@src/components/Time/EpochToRelativeDate';
 import { TokenBalance } from '@src/components/Token/TokenBalance';
 import { BigNumberToString } from '@src/components/Web3/BigNumber/BigNumberToString';
 import { IValueBigNumber } from '@src/types';
+import { ModalDrawAndPrizeDistributionAllParametersCard } from './ModalDrawAndPrizeDistributionAllParametersCard'
 
 interface IRow {
   value: any;
@@ -80,9 +81,15 @@ export const columns = [
           {row.isExpanded ? (
             <span className="tag tag-cloud cursor-pointer">Close</span>
           ) : (
-            <span className="tag tag-cloud cursor-pointer">Expand</span>
+            <span className="tag tag-cloud cursor-pointer">Manage</span>
           )}
         </span>
+        <div className='ml-2'>
+          <ModalDrawAndPrizeDistributionAllParametersCard draw={row?.original?.draw} prizeDistribution={row?.original?.prizeDistribution} >
+          <span className='tag tag-green-light tag-sm'>Parameters</span>
+          </ModalDrawAndPrizeDistributionAllParametersCard>
+
+        </div>
       </div>
     ),
   },
