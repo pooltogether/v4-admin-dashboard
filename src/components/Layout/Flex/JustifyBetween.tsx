@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 
 interface IJustifyBetween {
-  children: ReactElement;
+  children: ReactElement | ReactElement[];
 }
 
 export const JustifyBetween = ({ children }: IJustifyBetween): ReactElement => {

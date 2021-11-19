@@ -39,7 +39,7 @@ export const ModalFullScreen = ({ children, className, hideModal }: IModalFullSc
 
   // Style Panel
   const stylePanel = classnames(
-    'fixed top-0 bottom-0 left-0 right-0 bg-white p-14 w-100 w-5/4 z-100',
+    'fixed top-10 bottom-10 left-10 right-10 bg-white rounded-3xl p-8 w-100 w-5/4 z-100',
     className
   );
 
@@ -63,10 +63,12 @@ export const ModalFullScreen = ({ children, className, hideModal }: IModalFullSc
         style={{ ...animateBackground, zIndex: 999 }}
       />
       <animated.div className={stylePanel} style={{ ...animatePanel, zIndex: 1000 }}>
+        <div className="block relative text-right mb-6 -mt-4">
+          <span onClick={hideModal} className="tag tag-gray cursor-pointer">
+            <span className="">CLOSE</span>
+          </span>
+        </div>
         <div className="overflow-auto h-full">{children}</div>
-        <span onClick={hideModal} className="absolute top-0 right-0 cursor-pointer p-4 z-100">
-          <span className="tag tag-gray">CLOSE</span>
-        </span>
       </animated.div>
     </>
   );

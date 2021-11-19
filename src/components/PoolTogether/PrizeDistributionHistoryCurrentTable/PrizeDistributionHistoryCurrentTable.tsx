@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { TableBody } from '@src/components/Layout/Table/TableBody';
 import { TableHead } from '@src/components/Layout/Table/TableHead';
 import { TablePagination } from '@src/components/Layout/Table/TablePagination';
-import PrizeDistributionParameters from '@src/components/PrizeDistribution/PrizeDistributionParameters';
+import PrizeDistributionParameters from '@src/components/PoolTogether/PrizeDistribution/PrizeDistributionParameters';
 import { useGetContractABI } from '@src/hooks/useGetContractABI';
 import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
 import { useSafeContractCall } from '@src/hooks/useSafeContractCall';
