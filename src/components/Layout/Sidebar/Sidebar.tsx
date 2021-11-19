@@ -2,19 +2,9 @@
 import React from 'react';
 
 import { AppLogo } from '@src/components/App/AppLogo';
+import { MenuItemIExternalLink } from '@src/components/Layout/Menu/MenuItemIExternalLink';
 import { MenuItemSidebar } from '@src/components/Layout/Menu/MenuItemSidebar';
-import {
-  Activity,
-  GitHub,
-  Anchor,
-  BarChart,
-  CheckCircle,
-  Navigation,
-  Archive,
-  PlusSquare,
-  Aperture,
-  DollarSign,
-} from 'react-feather';
+import { Activity, GitHub, Archive, PlusSquare, DollarSign } from 'react-feather';
 
 export default function Sidebar() {
   return (
@@ -99,21 +89,21 @@ export default function Sidebar() {
           {/* Divider */}
           <hr className="my-4 w-full mt-8" />
           <ul className="md:flex-col md:min-w-full flex flex-col list-none">
-            <MenuItemSidebar
+            <MenuItemIExternalLink
               label="Contribute"
-              href="/contribute"
+              href="https://github.com/pooltogether"
               defaultStyle
               image={<GitHub width={16} />}
             />
-            <MenuItemSidebar
+            <MenuItemIExternalLink
               label="V4 Application"
-              href="/v4"
+              href="https://v4.pooltogether.com/"
               defaultStyle
               image={<PlusSquare width={16} />}
             />
-            <MenuItemSidebar
+            <MenuItemIExternalLink
               label="V3 Application"
-              href="/v4"
+              href="https://app.pooltogether.com/"
               defaultStyle
               image={<Archive width={16} />}
             />

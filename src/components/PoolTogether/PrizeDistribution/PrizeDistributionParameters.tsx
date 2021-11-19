@@ -19,7 +19,6 @@ const Tiers = ({ tiers }) => {
 
 export const PrizeDistributionParameters = ({ value }: { value: any }) => {
   if (!value) return null;
-  console.log(value, 'PrizeDist');
   return (
     <div className="">
       <JustifyBetween>

@@ -26,7 +26,6 @@ export async function calculatePicks(
   } else {
     numberOfPicks = ethers.BigNumber.from('0');
   }
-  console.log(`returning numberOfPicks ${Math.floor(numberOfPicks)}`);
   return Math.floor(numberOfPicks);
 }
 
