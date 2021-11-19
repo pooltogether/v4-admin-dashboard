@@ -21,7 +21,7 @@ The PoolTogether V4 Admin Dashboard simplifies reading and writing to the V4 pro
 
 The PoolTogether V4 Admin Dashboard is built to simplify user interaciton with the protocol, and also provider a foundation for smooth developer experience.
 
-### Core Web4 Components
+### Core Web3 Components
 The application is built with modularity in mind. Components can express what `data` is required and the fetching/normalizing for the frontend will be handled automatically.
 
  - [ContractIsolatedMulticall](https://github.com/pooltogether/v4-admin-dashboard/blob/master/src/components/Web3/Contracts/ContractIsolatedMulticall.tsx)
