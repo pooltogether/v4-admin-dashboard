@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 
 import { computePrizeDistribution } from '@pooltogether/v4-js';
+import { Draw } from '@pooltogether/v4-js/dist/types';
 import { AppInformationPopover } from '@src/components/App/AppInformationPopover';
 import { ModalSetPrizeDistribution } from '@src/components/PoolTogether/PrizeDistribution/ModalSetPrizeDistribution';
 import { convertPrizeDistributionTupleToFormDefaults } from '@src/lib/convertPrizeDistributionTupleToFormDefaults';
-import { Draw } from '@pooltogether/v4-js/dist/types';
 import classNames from 'classnames';
 import { isEqual } from 'lodash';
 import { CheckCircle, AlertTriangle } from 'react-feather';
 
-import { PrizeDistributionIsValidInformationPopover } from './PrizeDistributionIsValidInformationPopover';
 import { PrizeDistributionIsNotValidInformationPopover } from './PrizeDistributionIsNotValidInformationPopover';
+import { PrizeDistributionIsValidInformationPopover } from './PrizeDistributionIsValidInformationPopover';
 
 interface PrizeDistributionIsValidIconAndModalProps {
   className?: string;
@@ -38,7 +38,7 @@ export const PrizeDistributionIsValidIconAndModal = ({
       const calculatedMatchesCurrentSettings = isEqual(resultsWithDrawId, prizeDistribution);
       setIsValidPrizeDistribution(calculatedMatchesCurrentSettings);
     })();
-  }, []);
+  }, [draw, drawId, prizeDistribution]);
 
   const styleBase = classNames(className, '');
   return (
@@ -46,7 +46,7 @@ export const PrizeDistributionIsValidIconAndModal = ({
       <span className="tag tag-white -ml-8 cursor-pointer shadow-sm top-0 hover-up hover:border-b-2">
         <div className="flex items-center">
           {!!isValidPrizeDistribution && (
-           <>
+            <>
               <div className="flex items-center mr-2">
                 <CheckCircle className="text-green-500 mr-2" width={18} />
                 <span className="">Valid PrizeDistribution</span>
@@ -56,7 +56,7 @@ export const PrizeDistributionIsValidIconAndModal = ({
                 size={12}
                 positions={['right', 'top']}
               />
-           </>
+            </>
           )}
           {!isValidPrizeDistribution && (
             <>
@@ -67,13 +67,12 @@ export const PrizeDistributionIsValidIconAndModal = ({
                 </div>
               </ModalSetPrizeDistribution>
               <AppInformationPopover
-                content={<PrizeDistributionIsNotValidInformationPopover isValid={true} />}
+                content={<PrizeDistributionIsNotValidInformationPopover />}
                 size={12}
                 positions={['right', 'top']}
               />
             </>
           )}
-          
         </div>
       </span>
     </div>

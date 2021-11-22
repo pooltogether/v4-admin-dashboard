@@ -17,7 +17,9 @@ const Toast = ({ label, description, address, state, tid }: ToastProps) => {
   return (
     <>
       <div
-        className={`max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+        className={
+          'max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5'
+        }
       >
         <div className="flex-1 items-center w-0 p-4">
           <div className="flex items-start">
@@ -123,7 +125,17 @@ export const TransactionErrorNotification = ({
         config
       );
     }
-  }, [state, config, label, description, address, toasts.length, currentToastId, notificationId]);
+  }, [
+    state,
+    config,
+    label,
+    description,
+    address,
+    toasts.length,
+    currentToastId,
+    notificationId,
+    toastsActive,
+  ]);
 
   return null;
 };

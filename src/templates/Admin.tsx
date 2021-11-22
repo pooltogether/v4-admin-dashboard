@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { ReactElement } from 'react';
 
 import FooterAdmin from '@src/components/Layout/Footers/FooterAdmin';

@@ -7,7 +7,7 @@ import { EtherscanLink } from './EtherscanLink';
 
 interface IAddress {
   address: string;
-  isLink: Boolean;
+  isLink: boolean;
   trim: number;
 }
 

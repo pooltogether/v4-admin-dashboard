@@ -1,4 +1,4 @@
-// @ts-nocheck
+// 
 import { getAddress, isAddress } from '@ethersproject/address';
 import { InterfaceDrawHistory } from '@src/contracts/interfaces';
 import { useGetContractDrawHistory } from '@src/hooks/useGetContractDrawHistory';

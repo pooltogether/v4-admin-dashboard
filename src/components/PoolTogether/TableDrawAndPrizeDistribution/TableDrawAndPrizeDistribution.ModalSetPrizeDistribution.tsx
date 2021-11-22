@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
 import ModalFullScreen from '@src/components/Layout/Modal/ModalFullScreen';
-import { FormPrizeDistributionBufferSetPrizeDistribution } from '@src/components/PrizeDistribution/FormPrizeDistributionBufferSetPrizeDistribution';
+import { FormPrizeDistributionBufferSetPrizeDistribution } from '@src/components/PoolTogether/PrizeDistribution/FormPrizeDistributionBufferSetPrizeDistribution';
 import classNames from 'classnames';
 import { useModal } from 'react-modal-hook';
 

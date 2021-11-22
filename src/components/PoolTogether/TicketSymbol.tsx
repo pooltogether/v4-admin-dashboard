@@ -3,6 +3,17 @@ import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
 import { isAddress } from '@src/utils/is';
 import PropTypes from 'prop-types';
 
+type ITicketSymbolFetch = {
+  address: string;
+  className?: string;
+};
+
+const TicketSymbolFetch = ({ className, address }: ITicketSymbolFetch) => {
+  const value = useERC20Call(address, 'symbol', []);
+  if (value) return <span className={className}>{value}</span>;
+  return null;
+};
+
 type ITicketSymbol = {
   address: string;
   className?: string;
@@ -25,17 +36,6 @@ export const TicketSymbol = ({ className, defaultValue }: ITicketSymbol) => {
 TicketSymbol.propTypes = {
   address: PropTypes.string,
   className: PropTypes.string,
-};
-
-type ITicketSymbolFetch = {
-  address: string;
-  className?: string;
-};
-
-const TicketSymbolFetch = ({ className, address }: ITicketSymbolFetch) => {
-  const value = useERC20Call(address, 'symbol', []);
-  if (value) return <span className={className}>{value}</span>;
-  return null;
 };
 
 export default TicketSymbol;

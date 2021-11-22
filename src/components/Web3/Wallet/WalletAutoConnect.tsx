@@ -10,16 +10,15 @@ interface WalletAutoConnectProps {}
  * @param {Object} props
  */
 export const WalletAutoConnect = ({}: WalletAutoConnectProps) => {
-  const { activate, error } = useEthers();
-
-  const activateNetwork = (connector: any) => {
-    setTimeout(() => {
-      activate(connector);
-    }, 100);
-  };
+  const { activate } = useEthers();
 
   useEffect(() => {
     const defaultWallet = localStorage.getItem('wallet-default');
+    const activateNetwork = (connector: any) => {
+      setTimeout(() => {
+        activate(connector);
+      }, 100);
+    };
     (async () => {
       if (defaultWallet) {
         switch (defaultWallet) {
@@ -39,7 +38,7 @@ export const WalletAutoConnect = ({}: WalletAutoConnectProps) => {
         }
       }
     })();
-  }, []);
+  }, [activate]);
 
   return null;
 };

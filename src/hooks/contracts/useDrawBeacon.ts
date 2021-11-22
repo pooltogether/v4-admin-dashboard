@@ -1,4 +1,4 @@
-// @ts-nocheck
+// 
 import { getAddress, isAddress } from '@ethersproject/address';
 import { InterfaceDrawBeacon } from '@src/contracts/interfaces';
 import { useGetContractDrawBeacon } from '@src/hooks/contracts/useGetContractDrawBeacon';
