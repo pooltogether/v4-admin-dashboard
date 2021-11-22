@@ -54,7 +54,10 @@ export const columns = [
     accessor: 'draw.timestamp',
     Cell: ({ value }: IValueBigNumber) => (
       <span className="">
-        <EpochToCalendarDate className="block text-sm text-purple-700" epoch={value} />
+        <EpochToCalendarDate
+          className="block text-sm text-purple-700"
+          epoch={value}
+        />
         <EpochToRelativeDate className="block text-xs" epoch={value} />
       </span>
     ),
@@ -121,7 +124,9 @@ export const columns = [
           {row.isExpanded ? (
             <span className="tag tag-cloud cursor-pointer">Close</span>
           ) : (
-            <span className="tag tag-cloud cursor-pointer">Full Parameters</span>
+            <span className="tag tag-cloud cursor-pointer">
+              Full Parameters
+            </span>
           )}
         </span>
       </div>

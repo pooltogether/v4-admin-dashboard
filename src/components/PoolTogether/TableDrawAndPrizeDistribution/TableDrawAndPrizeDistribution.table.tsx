@@ -36,7 +36,7 @@ export function Table({ columns, data }: ITable) {
       initialState: { pageIndex: 0 },
     },
     useExpanded,
-    usePagination,
+    usePagination
   );
 
   // Render the UI for your table

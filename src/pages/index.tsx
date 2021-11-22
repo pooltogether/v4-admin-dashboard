@@ -15,7 +15,10 @@ import { Admin } from '../templates/Admin';
 const Index = () => {
   return (
     <div className="">
-      <Meta title="V4 Admin Dashboard" description="PoolTogether V4 Admin Dashbard" />
+      <Meta
+        title="V4 Admin Dashboard"
+        description="PoolTogether V4 Admin Dashbard"
+      />
       <div className="grid grid-cols-12 pb-4">
         <div className="col-span-6 flex items-center">
           <h3 className="font-light text-3xl m-0">

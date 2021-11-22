@@ -22,7 +22,11 @@ export function FormPrizeDistributorSetDrawCalculator({
 }: FormPrizeDistributorSetDrawCalculatorProps) {
   const { register, handleSubmit } = useForm();
   const address = useGetContractAddress('PrizeDistributor');
-  const [execute, state] = usePrizeDistributorFunction(address, 'setDrawCalculator', {});
+  const [execute, state] = usePrizeDistributorFunction(
+    address,
+    'setDrawCalculator',
+    {}
+  );
   const styleButton = classNames('btn btn-green font-thin text-lg mt-2 w-full');
   const styleLabel = classNames('font-semibold mb-2 text-4xl');
 

@@ -8,7 +8,7 @@ interface LoadingProps {
 export const Loading = ({ className, address }: LoadingProps) => {
   const styleBase = classNames(
     className,
-    'bg-white rounded-md  flex items-center justify-between py-20',
+    'bg-white rounded-md  flex items-center justify-between py-20'
   );
 
   return (

@@ -1,5 +1,5 @@
-import { FormPrizeDistributionBufferPushPrizeDistribution } from '@src/components/PrizeDistribution/FormPrizeDistributionBufferPushPrizeDistribution';
-import { FormPrizeDistributionBufferSetPrizeDistribution } from '@src/components/PrizeDistribution/FormPrizeDistributionBufferSetPrizeDistribution';
+import { FormPrizeDistributionBufferPushPrizeDistribution } from '@src/components/PoolTogether/PrizeDistribution/FormPrizeDistributionBufferPushPrizeDistribution';
+import { FormPrizeDistributionBufferSetPrizeDistribution } from '@src/components/PoolTogether/PrizeDistribution/FormPrizeDistributionBufferSetPrizeDistribution';
 import { ChainSwitch } from '@src/components/Web3/Chain/ChainSwitch';
 import { Meta } from '@src/layout/Meta';
 import { Admin } from '@src/templates/Admin';
@@ -30,7 +30,10 @@ const ContractPrizeDistributionBuffer = () => {
           <FormPrizeDistributionBufferPushPrizeDistribution
             labelButton={
               <span className="">
-                Push <span className="font-light text-base">(pushPrizeDistribution)</span>
+                Push{' '}
+                <span className="font-light text-base">
+                  (pushPrizeDistribution)
+                </span>
               </span>
             }
           />

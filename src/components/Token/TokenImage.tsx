@@ -15,7 +15,12 @@ type ITokenImage = {
  * @name TokenImage
  * @param {Object} props
  */
-export const TokenImage = ({ address, width, className, classNameContainer }: ITokenImage) => {
+export const TokenImage = ({
+  address,
+  width,
+  className,
+  classNameContainer,
+}: ITokenImage) => {
   const [image, setImage] = useState<string>();
 
   useEffect(() => {

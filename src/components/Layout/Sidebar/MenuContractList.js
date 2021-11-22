@@ -2,6 +2,7 @@ import idx from "idx";
 import { useEffect, useState } from "react";
 import { useEthers } from "@usedapp/core";
 import { MenuItemSidebar } from "@src/components/Layout/Menu/MenuItemSidebar";
+
 /**
  * @name MenuContractList
  * @param {Object} props
@@ -26,4 +27,5 @@ export const MenuContractList = ({ contracts }) => {
     <MenuItemSidebar label={item.label} href={`/contract/${item.address}`} icon='fa-anchor' />
   ));
 };
+
 export default MenuContractList;

@@ -38,7 +38,11 @@ export const TablePagination = ({
   return (
     <div className={styleBase}>
       <div className="">
-        <button className="tag tag-smoke" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+        <button
+          className="tag tag-smoke"
+          onClick={() => gotoPage(0)}
+          disabled={!canPreviousPage}
+        >
           {'<<'}
         </button>{' '}
         <button
@@ -48,7 +52,11 @@ export const TablePagination = ({
         >
           {'<'}
         </button>{' '}
-        <button className="tag tag-smoke" onClick={() => nextPage()} disabled={!canNextPage}>
+        <button
+          className="tag tag-smoke"
+          onClick={() => nextPage()}
+          disabled={!canNextPage}
+        >
           {'>'}
         </button>{' '}
         <button

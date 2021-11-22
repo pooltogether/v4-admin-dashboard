@@ -14,7 +14,13 @@ interface IEtherscanLink {
  * @name EtherscanLink
  * @param {Object} props
  */
-export const EtherscanLink = ({ address, className, hash, type, children }: IEtherscanLink) => {
+export const EtherscanLink = ({
+  address,
+  className,
+  hash,
+  type,
+  children,
+}: IEtherscanLink) => {
   if (type === 'transaction')
     return (
       <a

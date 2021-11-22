@@ -21,14 +21,18 @@ export const RowExpanded = ({ row }: IRowExpanded) => (
           drawId={row?.original?.draw?.drawId}
           prizeDistribution={row?.original?.prizeDistribution}
         >
-          <button className="btn btn-red w-full hover-up">Reset PrizeDistribution</button>
+          <button className="btn btn-red w-full hover-up">
+            Reset PrizeDistribution
+          </button>
         </ModalSetPrizeDistribution>
         <div className="bg-white p-6 rounded-md shadow-md mt-4">
-          <h3 className="font-bold text-lg border-b-2 mb-2 pb-2">Protocol Operations</h3>
+          <h3 className="font-bold text-lg border-b-2 mb-2 pb-2">
+            Protocol Operations
+          </h3>
           <p className="text-xs text-gray-600">
-            If the current PrizeDistribution does not match the calculated PrizeDistribution, the
-            PrizeDistribution must be reset to the calculated PrizeDistribution via the protocol
-            smart contracts.
+            If the current PrizeDistribution does not match the calculated
+            PrizeDistribution, the PrizeDistribution must be reset to the
+            calculated PrizeDistribution via the protocol smart contracts.
           </p>
         </div>
       </div>
@@ -39,13 +43,17 @@ export const RowExpanded = ({ row }: IRowExpanded) => (
           <h3 className="font-bold text-xl border-b-2 pb-2 mb-2">
             Current <span className="font-normal">PrizeDistribution</span>
           </h3>
-          <PrizeDistributionParameters value={row?.original?.prizeDistribution} />
+          <PrizeDistributionParameters
+            value={row?.original?.prizeDistribution}
+          />
         </div>
         <div className="card">
           <h3 className="font-bold text-xl border-b-2 pb-2 mb-2">
             Expected <span className="font-normal">PrizeDistribution</span>
           </h3>
-          <PrizeDistributionParameters value={row?.original?.prizeDistribution} />
+          <PrizeDistributionParameters
+            value={row?.original?.prizeDistribution}
+          />
         </div>
       </div>
     </div>
@@ -59,14 +67,20 @@ interface DrawCardProps {
   winningRandomNumber: number;
 }
 
-const DrawCard = ({ className, drawId, winningRandomNumber }: DrawCardProps) => {
+const DrawCard = ({
+  className,
+  drawId,
+  winningRandomNumber,
+}: DrawCardProps) => {
   return (
     <div className="">
       <div className={className}>
         <h3 className="font-bold text-xl border-b-2 mb-4">Draw Settings</h3>
         <span className="font-bold">Winning Random Number </span>
         <div className="break-words">
-          <span className="block word-wrap break-word">{winningRandomNumber.toString()}</span>
+          <span className="block word-wrap break-word">
+            {winningRandomNumber.toString()}
+          </span>
         </div>
       </div>
     </div>

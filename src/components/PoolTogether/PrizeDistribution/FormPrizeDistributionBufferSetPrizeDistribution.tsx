@@ -30,7 +30,11 @@ export function FormPrizeDistributionBufferSetPrizeDistribution({
     defaultValues,
   });
   const address = useGetContractAddress('PrizeDistributionBuffer');
-  const [execute, state] = usePrizeDistributionBufferFunction(address, 'setPrizeDistribution', {});
+  const [execute, state] = usePrizeDistributionBufferFunction(
+    address,
+    'setPrizeDistribution',
+    {}
+  );
   const styleButton = classNames('btn btn-green font-thin text-lg mt-4 w-full');
   const styleLabel = classNames('font-semibold mb-2 text-4xl');
 
@@ -91,7 +95,11 @@ export function FormPrizeDistributionBufferSetPrizeDistribution({
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="field-label-input-collection">
           <label className="label text-xl">Draw ID</label>
-          <input className="input input-lg mb-0" {...register('drawId')} placeholder="Draw ID" />
+          <input
+            className="input input-lg mb-0"
+            {...register('drawId')}
+            placeholder="Draw ID"
+          />
         </div>
         <hr className="mb-6 mt-3 border-2" />
 

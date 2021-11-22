@@ -11,7 +11,11 @@ interface IModalFullScreen {
   position: string;
 }
 
-export const ModalFullScreen = ({ children, className, hideModal }: IModalFullScreen) => {
+export const ModalFullScreen = ({
+  children,
+  className,
+  hideModal,
+}: IModalFullScreen) => {
   const [show, setShow] = useState(false);
 
   // Animate Background
@@ -62,7 +66,10 @@ export const ModalFullScreen = ({ children, className, hideModal }: IModalFullSc
         className={'fixed top-0 bottom-0 left-0 right-0 z-10'}
         style={{ ...animateBackground, zIndex: 999 }}
       />
-      <animated.div className={stylePanel} style={{ ...animatePanel, zIndex: 1000 }}>
+      <animated.div
+        className={stylePanel}
+        style={{ ...animatePanel, zIndex: 1000 }}
+      >
         <div className="block relative text-right mb-6 -mt-4">
           <span onClick={hideModal} className="tag tag-gray cursor-pointer">
             <span className="">CLOSE</span>

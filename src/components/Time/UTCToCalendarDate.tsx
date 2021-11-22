@@ -8,7 +8,8 @@ const UTCToCalendarDate = (props) => {
 
   useEffect(() => {
     const DateFromMillis = DateTime.fromISO(utc);
-    if (DateFromMillis.isValid) setDate(DateFromMillis.toLocaleString(DateTime.DATE_FULL));
+    if (DateFromMillis.isValid)
+      setDate(DateFromMillis.toLocaleString(DateTime.DATE_FULL));
   }, [utc]);
 
   return date ? <span>{date}</span> : null;

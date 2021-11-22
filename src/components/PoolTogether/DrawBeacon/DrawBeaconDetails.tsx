@@ -47,7 +47,10 @@ interface ContractInitializedProps {
   address?: string;
 }
 
-const ContractInitialized = ({ address, children }: ContractInitializedProps) => {
+const ContractInitialized = ({
+  address,
+  children,
+}: ContractInitializedProps) => {
   const abi = useGetContractABI('DrawBeacon');
   const methods = [
     'canStartDraw',
@@ -57,6 +60,10 @@ const ContractInitialized = ({ address, children }: ContractInitializedProps) =>
   const inputs = [[], [], []];
 
   // @ts-ignore
-  const data = getMulticallValues(useDrawBeaconCalls(address, methods, inputs), methods, abi);
+  const data = getMulticallValues(
+    useDrawBeaconCalls(address, methods, inputs),
+    methods,
+    abi
+  );
   return <div></div>;
 };

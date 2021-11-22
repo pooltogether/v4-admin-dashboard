@@ -4,7 +4,13 @@ import React from 'react';
 import { AppLogo } from '@src/components/App/AppLogo';
 import { MenuItemIExternalLink } from '@src/components/Layout/Menu/MenuItemIExternalLink';
 import { MenuItemSidebar } from '@src/components/Layout/Menu/MenuItemSidebar';
-import { Activity, GitHub, Archive, PlusSquare, DollarSign } from 'react-feather';
+import {
+  Activity,
+  GitHub,
+  Archive,
+  PlusSquare,
+  DollarSign,
+} from 'react-feather';
 
 export default function Sidebar() {
   return (

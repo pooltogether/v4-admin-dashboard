@@ -10,7 +10,12 @@ interface IModalPanel {
   position: string;
 }
 
-export const ModalPanel = ({ children, className, hideModal, position = 'right' }: IModalPanel) => {
+export const ModalPanel = ({
+  children,
+  className,
+  hideModal,
+  position = 'right',
+}: IModalPanel) => {
   const [show, setShow] = useState(false);
 
   // Animate Background
@@ -37,10 +42,14 @@ export const ModalPanel = ({ children, className, hideModal, position = 'right' 
   });
 
   // Style Panel
-  const stylePanel = classnames('fixed top-0 bottom-0 bg-white p-10 w-100 w-1/4 z-100', className, {
-    'right-0': position === 'right',
-    'left-0': position === 'left',
-  });
+  const stylePanel = classnames(
+    'fixed top-0 bottom-0 bg-white p-10 w-100 w-1/4 z-100',
+    className,
+    {
+      'right-0': position === 'right',
+      'left-0': position === 'left',
+    }
+  );
 
   const handleCloseModal = () => {
     setShow(true);
@@ -56,7 +65,10 @@ export const ModalPanel = ({ children, className, hideModal, position = 'right' 
         className={'fixed top-0 bottom-0 left-0 right-0 z-10'}
         style={{ ...animateBackground, zIndex: 999 }}
       />
-      <animated.div className={stylePanel} style={{ ...animatePanel, zIndex: 1000 }}>
+      <animated.div
+        className={stylePanel}
+        style={{ ...animatePanel, zIndex: 1000 }}
+      >
         <div>{children}</div>
       </animated.div>
     </>

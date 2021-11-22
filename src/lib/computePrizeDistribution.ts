@@ -26,7 +26,8 @@ export async function computePrizeDistribution(
   otherTickets?: Contract
 ): Promise<IPrizeDistribution | undefined> {
   debug('entered');
-  if (!draw || !prizeTierHistory || !ticketsToCalculate || !otherTickets) return undefined;
+  if (!draw || !prizeTierHistory || !ticketsToCalculate || !otherTickets)
+    return undefined;
   const prizeTier = await prizeTierHistory.getPrizeTier(draw.drawId);
 
   const beaconPeriod = draw.beaconPeriodSeconds;
@@ -58,8 +59,17 @@ export async function computePrizeDistribution(
   const { expiryDuration } = prizeTier;
   debug(`cardinality is ${matchCardinality}`);
 
-  debug(`total supply (combined): ${ethers.utils.formatUnits(combinedTotalSupply, decimals)}`);
-  debug(`total number of picks: ${(2 ** prizeTier.bitRangeSize) ** matchCardinality}`);
+  debug(
+    `total supply (combined): ${ethers.utils.formatUnits(
+      combinedTotalSupply,
+      decimals
+    )}`
+  );
+  debug(
+    `total number of picks: ${
+      (2 ** prizeTier.bitRangeSize) ** matchCardinality
+    }`
+  );
 
   let numberOfPicks = 0;
   if (combinedTotalSupply.gt('0')) {

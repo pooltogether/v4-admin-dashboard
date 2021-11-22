@@ -27,7 +27,10 @@ const Toast = ({ label, description, address, state, tid }: ToastProps) => {
             <div className="ml-3 flex-1">
               <h3 className="font-semibold text-lg border-b-0 mb-1">
                 <span className="inline-block">{label}</span>{' '}
-                <AppInformationPopover className="inline-block -mt-1" content={description} />
+                <AppInformationPopover
+                  className="inline-block -mt-1"
+                  content={description}
+                />
               </h3>
               <p className="">
                 <span className="font-bold">Error:</span> {state?.errorMessage}
@@ -123,7 +126,17 @@ export const TransactionErrorNotification = ({
         config
       );
     }
-  }, [state, config, label, description, address, toasts.length, currentToastId, notificationId]);
+  }, [
+    state,
+    config,
+    label,
+    description,
+    address,
+    toasts.length,
+    currentToastId,
+    notificationId,
+    toastsActive,
+  ]);
 
   return null;
 };

@@ -17,7 +17,11 @@ export const WalletDeactivate = ({ className, label }: IWalletDeactivate) => {
   };
 
   return (
-    <button type="button" className={className} onClick={handleDesactivateWeb3Wallet}>
+    <button
+      type="button"
+      className={className}
+      onClick={handleDesactivateWeb3Wallet}
+    >
       {label}
     </button>
   );

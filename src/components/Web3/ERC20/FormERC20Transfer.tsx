@@ -27,8 +27,14 @@ export function FormERC20Transfer({
   onSubmitHandle,
 }: FormERC20TransferProps) {
   const { register, handleSubmit } = useForm();
-  const [executeTransaction, stateTransaction] = useERC20Function(address, 'transfer', {});
-  const styleButton = classNames('btn btn-green font-thin text-2xl mt-4 w-full');
+  const [executeTransaction, stateTransaction] = useERC20Function(
+    address,
+    'transfer',
+    {}
+  );
+  const styleButton = classNames(
+    'btn btn-green font-thin text-2xl mt-4 w-full'
+  );
   const styleTitle = classNames('font-semibold mb-2 text-4xl');
   const styleLabel = classNames('font-light text-gray-600 mb-2 text-xl');
 
@@ -63,11 +69,19 @@ export function FormERC20Transfer({
         <div className="grid grid-cols-6 gap-x-4">
           <div className="col-span-3">
             <label className="label">Amount</label>
-            <input className="input input-default" {...register('amount')} placeholder="Amount" />
+            <input
+              className="input input-default"
+              {...register('amount')}
+              placeholder="Amount"
+            />
           </div>
           <div className="col-span-3">
             <label className="label">To</label>
-            <input className="input input-default" {...register('to')} placeholder="To" />
+            <input
+              className="input input-default"
+              {...register('to')}
+              placeholder="To"
+            />
           </div>
         </div>
         <button className={styleButton} type="submit">

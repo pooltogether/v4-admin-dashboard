@@ -18,10 +18,16 @@ export const BigNumberToString = ({
 }: IBigNumberToString): ReactElement | null => {
   if (BigNumber.isBigNumber(bigNumber) || typeof bigNumber === 'number') {
     if (trim > 0) {
-      return <span className={className}>{trimString(bigNumber.toString(), trim)}</span>;
+      return (
+        <span className={className}>
+          {trimString(bigNumber.toString(), trim)}
+        </span>
+      );
     }
     if (commify) {
-      return <span className={className}>{commifyNumber(bigNumber.toString())}</span>;
+      return (
+        <span className={className}>{commifyNumber(bigNumber.toString())}</span>
+      );
     }
     return <span className={className}>{bigNumber.toString()}</span>;
   }

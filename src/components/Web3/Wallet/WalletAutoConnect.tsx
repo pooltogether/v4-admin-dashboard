@@ -1,6 +1,11 @@
 import { useEffect } from 'react';
 
-import { injected, walletconnect, walletlink, network } from '@src/config/connectors';
+import {
+  injected,
+  walletconnect,
+  walletlink,
+  network,
+} from '@src/config/connectors';
 import { useEthers } from '@usedapp/core';
 
 interface WalletAutoConnectProps {}
@@ -10,16 +15,15 @@ interface WalletAutoConnectProps {}
  * @param {Object} props
  */
 export const WalletAutoConnect = ({}: WalletAutoConnectProps) => {
-  const { activate, error } = useEthers();
-
-  const activateNetwork = (connector: any) => {
-    setTimeout(() => {
-      activate(connector);
-    }, 100);
-  };
+  const { activate } = useEthers();
 
   useEffect(() => {
     const defaultWallet = localStorage.getItem('wallet-default');
+    const activateNetwork = (connector: any) => {
+      setTimeout(() => {
+        activate(connector);
+      }, 100);
+    };
     (async () => {
       if (defaultWallet) {
         switch (defaultWallet) {
@@ -39,7 +43,7 @@ export const WalletAutoConnect = ({}: WalletAutoConnectProps) => {
         }
       }
     })();
-  }, []);
+  }, [activate]);
 
   return null;
 };

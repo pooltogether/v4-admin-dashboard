@@ -46,7 +46,9 @@ export const Web3SafeTypeRender = ({
           </span>
         ));
       case 'object':
-        return Object.values(valueToRender).map((item: any) => determineTypeAndRender(item));
+        return Object.values(valueToRender).map((item: any) =>
+          determineTypeAndRender(item)
+        );
       default:
         return valueToRender;
     }
