@@ -36,19 +36,6 @@ type IDrawSettingsFetch = {
 
 const DrawSettingsFetch = ({ className, address, drawId }: IDrawSettingsFetch) => {
   const value = usePrizeDistributionBufferCall(address, 'getDrawSetting', [drawId]);
-  // console.log(address, value, 'DrawSettings');
-
-  // const contract = useGetContractTsunamiDrawSettingsHistory(address);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     if (contract) {
-  //       const drawSetting = await contract.getDrawSetting(drawId);
-  //       console.log(drawSetting, 'drawSetting');
-  //     }
-  //   })();
-  // }, [contract]);
-
   if (value)
     return (
       <div className={className}>

@@ -34,8 +34,6 @@ export function FormDrawBeaconSetBeaconPeriodSeconds({
     }
   };
 
-  console.log(state);
-
   return (
     <div className={className}>
       <TransactionErrorNotification
