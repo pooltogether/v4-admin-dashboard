@@ -52,4 +52,25 @@ export const RowExpanded = ({ row }: IRowExpanded) => (
   </div>
 );
 
+interface DrawCardProps {
+  className?: string;
+  timestamp: any;
+  drawId: any;
+  winningRandomNumber: number;
+}
+
+const DrawCard = ({ className, drawId, winningRandomNumber }: DrawCardProps) => {
+  return (
+    <div className="">
+      <div className={className}>
+        <h3 className="font-bold text-xl border-b-2 mb-4">Draw Settings</h3>
+        <span className="font-bold">Winning Random Number </span>
+        <div className="break-words">
+          <span className="block word-wrap break-word">{winningRandomNumber.toString()}</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default RowExpanded;

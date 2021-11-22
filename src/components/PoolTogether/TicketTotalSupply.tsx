@@ -4,17 +4,6 @@ import { transformAndCommifyBigNumber } from '@src/utils/convert';
 import { isAddress } from '@src/utils/is';
 import PropTypes from 'prop-types';
 
-type ITicketTotalSupplyFetch = {
-  address: string;
-  className?: string;
-};
-
-const TicketTotalSupplyFetch = ({ className, address }: ITicketTotalSupplyFetch) => {
-  const value = useERC20Call(address, 'totalSupply', []);
-  if (value) return <span className={className}>{transformAndCommifyBigNumber(value)}</span>;
-  return null;
-};
-
 type ITicketTotalSupply = {
   className?: string;
   defaultValue?: string | number;
@@ -35,6 +24,17 @@ export const TicketTotalSupply = ({ className, defaultValue }: ITicketTotalSuppl
 
 TicketTotalSupply.propTypes = {
   className: PropTypes.string,
+};
+
+type ITicketTotalSupplyFetch = {
+  address: string;
+  className?: string;
+};
+
+const TicketTotalSupplyFetch = ({ className, address }: ITicketTotalSupplyFetch) => {
+  const value = useERC20Call(address, 'totalSupply', []);
+  if (value) return <span className={className}>{transformAndCommifyBigNumber(value)}</span>;
+  return null;
 };
 
 export default TicketTotalSupply;

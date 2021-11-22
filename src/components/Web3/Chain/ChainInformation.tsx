@@ -1,9 +1,10 @@
+// @ts-nocheck
 import { useEthers, getChainName } from '@usedapp/core';
 
 interface ChainInformationProps {
   className?: string;
-  showChainId?: boolean;
-  showChainName?: boolean;
+  showChainId?: Boolean;
+  showChainName?: Boolean;
 }
 
 export const ChainInformation = ({

@@ -3,17 +3,6 @@ import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
 import { isAddress } from '@src/utils/is';
 import PropTypes from 'prop-types';
 
-type IManagerFetch = {
-  address: string;
-  className?: string;
-};
-
-const ManagerFetch = ({ className, address }: IManagerFetch) => {
-  const value = useManageableCall(address, 'manager', []);
-  if (value) return <span className={className}>{value}</span>;
-  return null;
-};
-
 type IManager = {
   address: string;
   className?: string;
@@ -36,6 +25,17 @@ export const Manager = ({ className, name, defaultValue }: IManager) => {
 Manager.propTypes = {
   address: PropTypes.string,
   className: PropTypes.string,
+};
+
+type IManagerFetch = {
+  address: string;
+  className?: string;
+};
+
+const ManagerFetch = ({ className, address }: IManagerFetch) => {
+  const value = useManageableCall(address, 'manager', []);
+  if (value) return <span className={className}>{value}</span>;
+  return null;
 };
 
 export default Manager;

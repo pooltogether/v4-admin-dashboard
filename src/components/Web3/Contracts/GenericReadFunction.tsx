@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ReactElement } from 'react';
 
 import { Component } from '@src/components/Component';

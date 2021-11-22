@@ -17,6 +17,8 @@ export const Web3TypeRender = ({
   value,
   type,
   label,
+  internalType,
+  ...props
 }: Web3TypeRenderProps) => {
   const styleBase = classNames(className, 'web3-type');
   const styleLabel = classNames(classNameLabel, 'web3-type');

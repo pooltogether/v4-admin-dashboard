@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
 import classnames from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -7,16 +5,18 @@ import { useRouter } from 'next/router';
 interface IMenuItemSidebar {
   label: string;
   href: string;
-  image?: ReactNode;
-  labelStyle?: string;
-  iconStyle?: string;
-  defaultStyle?: boolean;
+  image: Element;
+  styled: string | object | Array<any>;
+  labelStyle: string;
+  iconStyle: string;
+  defaultStyle: Boolean;
 }
 
 export const MenuItemSidebar = ({
   label,
   href,
   image,
+  styled,
   labelStyle,
   iconStyle,
   defaultStyle,
@@ -37,7 +37,7 @@ export const MenuItemSidebar = ({
     'text-blueGray-700 hover:text-blueGray-500': !isExactMatch,
   });
 
-  const styleIcon = classnames('mr-0 text-sms', iconStyle, {
+  const styleIcon = classnames(`mr-0 text-sms`, iconStyle, {
     'opacity-75': isExactMatch,
     'text-blueGray-300': !isExactMatch,
   });

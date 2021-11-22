@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { ModalFullScreen } from '@src/components/Layout/Modal/ModalFullScreen';
-import { FormPrizeDistributionBufferSetPrizeDistribution } from '@src/components/PoolTogether/PrizeDistribution/FormPrizeDistributionBufferSetPrizeDistribution';
 import { PrizeDistributionParameters } from '@src/components/PoolTogether/PrizeDistribution/PrizeDistributionParameters';
+import { FormPrizeDistributionBufferSetPrizeDistribution } from '@src/components/PrizeDistribution/FormPrizeDistributionBufferSetPrizeDistribution';
 import { convertPrizeDistributionTupleToFormDefaults } from '@src/lib/convertPrizeDistributionTupleToFormDefaults';
 import classNames from 'classnames';
 import { useModal } from 'react-modal-hook';

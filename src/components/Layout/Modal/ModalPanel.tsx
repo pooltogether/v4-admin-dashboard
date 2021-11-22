@@ -28,10 +28,10 @@ export const ModalPanel = ({ children, className, hideModal, position = 'right' 
 
   // Animate Panel
   const animatePanel = useSpring({
-    from: { opacity: 0, transform: 'translate3d(250px, 0px, 0px)' },
-    to: { opacity: 1, transform: 'translate3d(0px, 0px, 0px)' },
-    enter: { opacity: 1, transform: 'translate3d(0px, 0px, 0px)' },
-    leave: { opacity: 0, transform: 'translate3d(250px, 0px, 0px)' },
+    from: { opacity: 0, transform: `translate3d(250px, 0px, 0px)` },
+    to: { opacity: 1, transform: `translate3d(0px, 0px, 0px)` },
+    enter: { opacity: 1, transform: `translate3d(0px, 0px, 0px)` },
+    leave: { opacity: 0, transform: `translate3d(250px, 0px, 0px)` },
     reverse: show,
     delay: 100,
   });

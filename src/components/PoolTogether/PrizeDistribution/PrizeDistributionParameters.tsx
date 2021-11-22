@@ -1,7 +1,9 @@
+// @ts-nocheck
 import React from 'react';
 
-import { JustifyBetween } from '@src/components/Layout/Flex/JustifyBetween';
-import { TokenBalance } from '@src/components/Token/TokenBalance';
+import { JustifyBetween } from '@components/Layout/Flex/JustifyBetween';
+
+import { TokenBalance } from '../../Token/TokenBalance';
 
 const Tiers = ({ tiers }) => {
   const Dists = !tiers

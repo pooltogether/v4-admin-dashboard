@@ -3,17 +3,6 @@ import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
 import { isAddress } from '@src/utils/is';
 import PropTypes from 'prop-types';
 
-type ITicketNameFetch = {
-  address: string;
-  className?: string;
-};
-
-const TicketNameFetch = ({ className, address }: ITicketNameFetch) => {
-  const value = useERC20Call(address, 'name', []);
-  if (value) return <span className={className}>{value}</span>;
-  return null;
-};
-
 type ITicketName = {
   address: string;
   className?: string;
@@ -40,6 +29,17 @@ export const TicketName = ({
 TicketName.propTypes = {
   address: PropTypes.string,
   className: PropTypes.string,
+};
+
+type ITicketNameFetch = {
+  address: string;
+  className?: string;
+};
+
+const TicketNameFetch = ({ className, address }: ITicketNameFetch) => {
+  const value = useERC20Call(address, 'name', []);
+  if (value) return <span className={className}>{value}</span>;
+  return null;
 };
 
 export default TicketName;

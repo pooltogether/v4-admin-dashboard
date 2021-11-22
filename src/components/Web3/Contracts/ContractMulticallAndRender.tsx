@@ -11,7 +11,7 @@ import classNames from 'classnames';
 
 const debug = require('debug')('web3:hooks:useDrawBeacon');
 
-const Render = ({ abi, address, methods, calls, component }: any) => {
+const Render = ({ abi, address, methods, args, calls, component }: any) => {
   const data = useContractCalls(address && calls) ?? [];
   const values = addTypesToMulticallValues(data, methods, abi);
   debug('ContractMulticallAndRender:Render:data', data);

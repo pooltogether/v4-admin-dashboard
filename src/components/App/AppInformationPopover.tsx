@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import classNames from 'classnames';
 import { Info } from 'react-feather';
@@ -25,6 +25,9 @@ export const AppInformationPopover = ({
   const styleIcon = classNames('cursor-pointer hover-up', className);
   const positionConfig = positions || ['top', 'bottom', 'left', 'right'];
 
+  const wrapperRef = useRef(null);
+  useOutsideAlerter(wrapperRef);
+
   return (
     <Popover
       isOpen={isPopoverOpen}
@@ -38,5 +41,23 @@ export const AppInformationPopover = ({
     </Popover>
   );
 };
-
 export default AppInformationPopover;
+
+function useOutsideAlerter(ref) {
+  useEffect(() => {
+    /**
+     * Alert if clicked on outside of element
+     */
+    function handleClickOutside(event) {
+      if (ref.current && ref.current.contains(event.target)) {
+        alert('You clicked outside of me!');
+      }
+    }
+    // Bind the event listener
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      // Unbind the event listener on clean up
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [ref]);
+}

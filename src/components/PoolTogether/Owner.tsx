@@ -3,17 +3,6 @@ import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
 import { isAddress } from '@src/utils/is';
 import PropTypes from 'prop-types';
 
-type IOwnerFetch = {
-  address: string;
-  className?: string;
-};
-
-const OwnerFetch = ({ className, address }: IOwnerFetch) => {
-  const value = useOwnableCall(address, 'owner', []);
-  if (value) return <span className={className}>{value}</span>;
-  return null;
-};
-
 type IOwner = {
   address: string;
   className?: string;
@@ -36,6 +25,17 @@ export const Owner = ({ className, name, defaultValue }: IOwner) => {
 Owner.propTypes = {
   address: PropTypes.string,
   className: PropTypes.string,
+};
+
+type IOwnerFetch = {
+  address: string;
+  className?: string;
+};
+
+const OwnerFetch = ({ className, address }: IOwnerFetch) => {
+  const value = useOwnableCall(address, 'owner', []);
+  if (value) return <span className={className}>{value}</span>;
+  return null;
 };
 
 export default Owner;

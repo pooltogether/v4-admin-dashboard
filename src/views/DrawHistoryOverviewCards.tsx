@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DashboardAreaTitle } from '@src/components/Layout/Dashboard/DashboardAreaTitle';
 import { DashboardStatistic } from '@src/components/Layout/Dashboard/DashboardStatistic';
 import { JustifyBetween } from '@src/components/Layout/Flex/JustifyBetween';

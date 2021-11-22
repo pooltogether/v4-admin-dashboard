@@ -3,6 +3,31 @@ import { useGetContractAddress } from '@src/hooks/useGetContractAddress';
 import { isAddress } from '@src/utils/is';
 import PropTypes from 'prop-types';
 
+type IDrawSettings = {
+  address?: string;
+  className?: string;
+  name: string;
+  drawId: string | number;
+  defaultValue?: string | number;
+};
+
+/**
+ * @name DrawSettings
+ * @param {Object} props
+ */
+export const DrawSettings = ({ className, name, drawId, defaultValue }: IDrawSettings) => {
+  const address = useGetContractAddress(name);
+  if (isAddress(address)) {
+    return <DrawSettingsFetch address={address} className={className} drawId={drawId} />;
+  }
+  return <span className={className}>{defaultValue}</span>;
+};
+
+DrawSettings.propTypes = {
+  address: PropTypes.string,
+  className: PropTypes.string,
+};
+
 type IDrawSettingsFetch = {
   address: string;
   drawId: string | number;
@@ -37,31 +62,6 @@ const DrawSettingsFetch = ({ className, address, drawId }: IDrawSettingsFetch) =
       </div>
     );
   return null;
-};
-
-type IDrawSettings = {
-  address?: string;
-  className?: string;
-  name: string;
-  drawId: string | number;
-  defaultValue?: string | number;
-};
-
-/**
- * @name DrawSettings
- * @param {Object} props
- */
-export const DrawSettings = ({ className, name, drawId, defaultValue }: IDrawSettings) => {
-  const address = useGetContractAddress(name);
-  if (isAddress(address)) {
-    return <DrawSettingsFetch address={address} className={className} drawId={drawId} />;
-  }
-  return <span className={className}>{defaultValue}</span>;
-};
-
-DrawSettings.propTypes = {
-  address: PropTypes.string,
-  className: PropTypes.string,
 };
 
 export default DrawSettings;
