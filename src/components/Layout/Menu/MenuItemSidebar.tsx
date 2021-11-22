@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import classnames from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -5,7 +7,7 @@ import { useRouter } from 'next/router';
 interface IMenuItemSidebar {
   label: string;
   href: string;
-  image?: Element;
+  image?: ReactNode;
   labelStyle?: string;
   iconStyle?: string;
   defaultStyle?: boolean;

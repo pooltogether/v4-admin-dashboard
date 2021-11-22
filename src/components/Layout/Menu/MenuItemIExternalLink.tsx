@@ -1,14 +1,15 @@
+import { ReactNode } from 'react';
+
 import classnames from 'classnames';
 import { useRouter } from 'next/router';
 
 interface IMenuItemIExternalLink {
   label: string;
   href: string;
-  image: Element;
-  styled: string | object | Array<any>;
-  labelStyle: string;
-  iconStyle: string;
-  defaultStyle: boolean;
+  image: ReactNode;
+  labelStyle?: string;
+  iconStyle?: string;
+  defaultStyle?: boolean;
 }
 
 export const MenuItemIExternalLink = ({
