@@ -24,8 +24,8 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       # Enable Linting when application is ready!
-      # - name: Lint
-      #   run: yarn lint
+      - name: Lint
+        run: yarn lint
 
       - name: Build
         run: yarn build
