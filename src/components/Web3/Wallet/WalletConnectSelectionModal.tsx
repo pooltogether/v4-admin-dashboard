@@ -6,6 +6,50 @@ import { useEthers } from '@usedapp/core';
 import classNames from 'classnames';
 import { useModal } from 'react-modal-hook';
 
+interface WalletOptionProps {
+  activate: Function;
+  className?: string;
+  classNameLabel?: string;
+  classNameImage?: string;
+  defaultWallet: string;
+  label: string;
+  value: string;
+  image: string;
+  connector: any;
+}
+const WalletOption = ({
+  activate,
+  className,
+  classNameLabel,
+  classNameImage,
+  defaultWallet,
+  label,
+  value,
+  image,
+  connector,
+}: WalletOptionProps) => {
+  const styleBase = classNames(className, 'wallet-card flex items-center justify-between mb-2');
+  const styleLabel = classNames(classNameLabel, 'font-semibold text-lg inline');
+  const styleImage = classNames(classNameImage, '');
+
+  const handleClick = () => {
+    activate(connector);
+    window.localStorage.setItem('wallet-default', value);
+  };
+
+  return (
+    <div className={styleBase} onClick={handleClick}>
+      <span className={styleLabel}>
+        {label}{' '}
+        {defaultWallet == value && (
+          <span className="ml-1 tag tag-smoke text-xs">Default Selection</span>
+        )}{' '}
+      </span>
+      <img className={styleImage} src={image} alt={`${label} Icon`} width={32} />
+    </div>
+  );
+};
+
 interface WalletConnectSelectionModalProps {
   className?: string;
   children?: ReactNode;
@@ -62,50 +106,6 @@ export const WalletConnectSelectionModal = ({
     <span className={styleBase} onKeyDown={showModal} onClick={showModal}>
       {label || children}
     </span>
-  );
-};
-
-interface WalletOptionProps {
-  activate: Function;
-  className?: string;
-  classNameLabel?: string;
-  classNameImage?: string;
-  defaultWallet: string;
-  label: string;
-  value: string;
-  image: string;
-  connector: any;
-}
-const WalletOption = ({
-  activate,
-  className,
-  classNameLabel,
-  classNameImage,
-  defaultWallet,
-  label,
-  value,
-  image,
-  connector,
-}: WalletOptionProps) => {
-  const styleBase = classNames(className, 'wallet-card flex items-center justify-between mb-2');
-  const styleLabel = classNames(classNameLabel, 'font-semibold text-lg inline');
-  const styleImage = classNames(classNameImage, '');
-
-  const handleClick = () => {
-    activate(connector);
-    window.localStorage.setItem('wallet-default', value);
-  };
-
-  return (
-    <div className={styleBase} onClick={handleClick}>
-      <span className={styleLabel}>
-        {label}{' '}
-        {defaultWallet == value && (
-          <span className="ml-1 tag tag-smoke text-xs">Default Selection</span>
-        )}{' '}
-      </span>
-      <img className={styleImage} src={image} alt={`${label} Icon`} width={32} />
-    </div>
   );
 };
 

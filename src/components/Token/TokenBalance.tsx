@@ -9,16 +9,9 @@ interface ITokenBalance {
   amount: BigNumberish;
   decimals?: string | number;
   trim?: string | number;
-  defaultValue?: string | number;
 }
 
-export const TokenBalance = ({
-  className,
-  amount,
-  decimals,
-  defaultValue,
-  trim,
-}: ITokenBalance) => {
+export const TokenBalance = ({ className, amount, decimals, trim }: ITokenBalance) => {
   return useMemo(() => {
     return (
       <span className={classNames('inline-block', className)}>

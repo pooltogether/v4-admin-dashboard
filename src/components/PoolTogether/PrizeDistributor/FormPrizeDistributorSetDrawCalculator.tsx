@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 
 import { TransactionErrorNotification } from '@src/components/Web3/Transaction/TransactionErrorNotification';

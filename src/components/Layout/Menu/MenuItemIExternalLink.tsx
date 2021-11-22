@@ -1,14 +1,15 @@
+import { ReactNode } from 'react';
+
 import classnames from 'classnames';
 import { useRouter } from 'next/router';
 
 interface IMenuItemIExternalLink {
   label: string;
   href: string;
-  image: Element;
-  styled: string | object | Array<any>;
-  labelStyle: string;
-  iconStyle: string;
-  defaultStyle: Boolean;
+  image: ReactNode;
+  labelStyle?: string;
+  iconStyle?: string;
+  defaultStyle?: boolean;
 }
 
 export const MenuItemIExternalLink = ({
@@ -35,7 +36,7 @@ export const MenuItemIExternalLink = ({
     'text-blueGray-700 hover:text-blueGray-500': !isExactMatch,
   });
 
-  const styleIcon = classnames(`mr-0 text-sms`, iconStyle, {
+  const styleIcon = classnames('mr-0 text-sms', iconStyle, {
     'opacity-75': isExactMatch,
     'text-blueGray-300': !isExactMatch,
   });

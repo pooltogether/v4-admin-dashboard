@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 
 import { TableBody } from '@src/components/Layout/Table/TableBody';

@@ -1,11 +1,17 @@
-// @ts-nocheck
 import { useEffect } from 'react';
 
 import { shortenAddress } from '@src/utils/convert';
 import { useNotifications } from '@usedapp/core';
 import { Toaster, toast } from 'react-hot-toast';
 
-const Toast = ({ status, label, description, to, address, icon }) => {
+interface IToast {
+  status?: string;
+  label?: string;
+  description?: string;
+  to?: string;
+}
+
+const Toast = ({ status, label, description, to }: IToast) => {
   return (
     <div className="flex items-center">
       <div className="mx-3 my-2">
@@ -25,7 +31,7 @@ const Toast = ({ status, label, description, to, address, icon }) => {
  * @name DAppTransactionNotifications
  * @param {Object} props
  */
-export const DAppTransactionNotifications = (props) => {
+export const DAppTransactionNotifications = () => {
   const { notifications } = useNotifications();
 
   useEffect(() => {
@@ -33,33 +39,13 @@ export const DAppTransactionNotifications = (props) => {
       notifications.forEach((notif) => {
         switch (notif.type) {
           case 'transactionStarted':
-            toast(
-              <Toast
-                status="Started"
-                label={notif.transactionName.label}
-                description={notif.transactionName.description}
-                to={notif.transactionName.to}
-                icon={notif.transactionName.image}
-                address={notif.transactionName.address}
-              />
-              // { duration: 4000 }
-            );
+            toast(<Toast status="Started" label={''} description={''} to={''} />);
             break;
           case 'transactionSucceed':
-            toast(
-              <Toast
-                status="Success"
-                label={notif.transactionName.label}
-                description={notif.transactionName.description}
-                to={notif.transactionName.to}
-                icon={notif.transactionName.image}
-                address={notif.transactionName.address}
-              />
-              // { duration: 4000 }
-            );
+            toast(<Toast status="Success" label={''} description={''} to={''} />);
             break;
           default:
-            break;
+            return null;
         }
       });
     }
@@ -69,14 +55,12 @@ export const DAppTransactionNotifications = (props) => {
     <Toaster
       position="bottom-right"
       toastOptions={{
-        // Define default options
         className: '',
         duration: 6000,
         style: {
           background: '#FFF',
           color: '#000',
         },
-        // Default options for specific types
         success: {
           duration: 6000,
           theme: {

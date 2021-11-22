@@ -1,7 +1,7 @@
 {
-  "short_name": "PoolTogether V4 Admin",
-  "name": "PoolTogether V4 Admin Dashboard",
-  "description": "Overview and management for PoolTogether V4 PrizePools",
+  "short_name": "PoolTogether V4 Dashboard",
+  "name": "PoolTogether V4 Dashboard",
+  "description": "The PoolTogether V4 Admin Dashboard simplifies reading and writing to the V4 protocol smart contracts.",
   "iconPath": "favicon.png",
   "icons": [
     {

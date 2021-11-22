@@ -1,4 +1,4 @@
-// @ts-nocheck
+// 
 import { getAddress, isAddress } from '@ethersproject/address';
 import { InterfaceManageable } from '@src/contracts/interfaces';
 import { useGetContractManageable } from '@src/hooks/contracts/useGetContractManageable';

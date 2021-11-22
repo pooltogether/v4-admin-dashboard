@@ -1,10 +1,52 @@
-// @ts-nocheck
 import { useState } from 'react';
 
 import { bridgeMainnet, bridgeTestnet } from '@src/config/bridging';
 import { useEthers, getChainName } from '@usedapp/core';
 import classNames from 'classnames';
 import Switch from 'react-switch';
+
+interface NetworkProps {
+  className?: string;
+  label?: string;
+  image?: string;
+  chainId?: string | number;
+  chainName?: string;
+  chainType?: string;
+  chainNetwork?: string;
+  currentChainName?: string;
+  chain?: any;
+  currentChainId?: string | number;
+  handleChangeNetwork: Function;
+}
+
+const Network = ({
+  className,
+  label,
+  image,
+  chainNetwork,
+  chainId,
+  chain,
+  currentChainId,
+  handleChangeNetwork,
+}: NetworkProps) => {
+  const styleBase = classNames(
+    className,
+    'flex items-center cursor-pointer py-2 px-4 mx-1 text-sm rounded-md hover-up',
+    {
+      'bg-gray-200 text-gray-600': chainId !== currentChainId,
+      'bg-purple-800 text-white': chainId === currentChainId,
+    }
+  );
+
+  return (
+    <div className={styleBase} onClick={() => handleChangeNetwork(chainId, chain)}>
+      <img alt={label} src={image} width={22} />{' '}
+      <span className="font-bold ml-2">
+        {chainNetwork} <span className="font-normal text-xs">(ID: {chainId})</span>
+      </span>
+    </div>
+  );
+};
 
 interface ChainSwitchProps {
   className?: string;
@@ -60,50 +102,6 @@ export const ChainSwitch = ({ className }: ChainSwitchProps) => {
           handleChangeNetwork={handleChangeNetwork}
         />
       ))}
-    </div>
-  );
-};
-
-interface NetworkProps {
-  className?: string;
-  label?: string;
-  image?: string;
-  chainId?: string | number;
-  chainName?: string;
-  chainType?: string;
-  chainNetwork?: string;
-  currentChainName?: string;
-  chain?: any;
-  currentChainId?: string | number;
-  handleChangeNetwork: Function;
-}
-
-const Network = ({
-  className,
-  label,
-  image,
-  chainNetwork,
-  chainName,
-  chainId,
-  chain,
-  currentChainId,
-  handleChangeNetwork,
-}: NetworkProps) => {
-  const styleBase = classNames(
-    className,
-    'flex items-center cursor-pointer py-2 px-4 mx-1 text-sm rounded-md hover-up',
-    {
-      'bg-gray-200 text-gray-600': chainId !== currentChainId,
-      'bg-purple-800 text-white': chainId === currentChainId,
-    }
-  );
-
-  return (
-    <div className={styleBase} onClick={() => handleChangeNetwork(chainId, chain)}>
-      <img alt={label} src={image} width={22} />{' '}
-      <span className="font-bold ml-2">
-        {chainNetwork} <span className="font-normal text-xs">(ID: {chainId})</span>
-      </span>
     </div>
   );
 };

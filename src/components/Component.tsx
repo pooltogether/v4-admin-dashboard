@@ -1,7 +1,6 @@
-// @ts-nocheck
 import React, { ReactElement, ReactNode } from 'react';
 
-export function isClassComponent(component: any) {
+export function isClassComponent(component: unknown) {
   return (
     typeof component === 'function' && !!component.prototype && component.prototype.isReactComponent
   );
