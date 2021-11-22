@@ -23,10 +23,7 @@ export const DrawParameters = ({ value }: { value: any }) => {
       </JustifyBetween>
       <JustifyBetween>
         <span className="text-sm">beaconPeriodStartedAt:</span>
-        <span className="text-sm">
-          {' '}
-          {value.beaconPeriodStartedAt.toString()}
-        </span>
+        <span className="text-sm"> {value.beaconPeriodStartedAt.toString()}</span>
       </JustifyBetween>
       <JustifyBetween>
         <span className="text-sm">timestamp:</span>

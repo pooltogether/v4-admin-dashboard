@@ -11,10 +11,7 @@ interface ISecondsToHoursEstimate {
  * @name SecondsToHoursEstimate
  * @param {*} props
  */
-export const SecondsToHoursEstimate = ({
-  className,
-  seconds,
-}: ISecondsToHoursEstimate) => {
+export const SecondsToHoursEstimate = ({ className, seconds }: ISecondsToHoursEstimate) => {
   const [date, setDate] = useState('Loading...');
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-// @ts-nocheck
+// 
 import { useEffect, useState } from 'react';
 
 import { useSafeContractCall } from '@src/hooks/useSafeContractCall';

@@ -12,10 +12,7 @@ import ContractDrawBeaconReadAll from '@src/views/contract/ContractDrawBeaconRea
 const ContractDrawBeacon = () => {
   return (
     <div className="page--treasury">
-      <Meta
-        title="Treasury - V4 PoolTogether"
-        description="PoolTogether V4 Admin Dashbard"
-      />
+      <Meta title="Treasury - V4 PoolTogether" description="PoolTogether V4 Admin Dashbard" />
       <div className="grid grid-cols-12 pb-4">
         <div className="col-span-6 flex items-center">
           <DrawBeaconStartDrawButton />
@@ -31,8 +28,7 @@ const ContractDrawBeacon = () => {
         <div className="card col-span-4">
           <h3 className="font-bold text-2xl">Set Beacon Period Seconds</h3>
           <p className="">
-            The beacon period seconds is the amount of time that must between
-            each new Draw request.
+            The beacon period seconds is the amount of time that must between each new Draw request.
           </p>
         </div>
         <div className="card col-span-8">

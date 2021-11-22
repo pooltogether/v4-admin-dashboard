@@ -9,15 +9,9 @@ type ITicketTotalSupplyFetch = {
   className?: string;
 };
 
-const TicketTotalSupplyFetch = ({
-  className,
-  address,
-}: ITicketTotalSupplyFetch) => {
+const TicketTotalSupplyFetch = ({ className, address }: ITicketTotalSupplyFetch) => {
   const value = useERC20Call(address, 'totalSupply', []);
-  if (value)
-    return (
-      <span className={className}>{transformAndCommifyBigNumber(value)}</span>
-    );
+  if (value) return <span className={className}>{transformAndCommifyBigNumber(value)}</span>;
   return null;
 };
 
@@ -30,10 +24,7 @@ type ITicketTotalSupply = {
  * @name TicketTotalSupply
  * @param {Object} props
  */
-export const TicketTotalSupply = ({
-  className,
-  defaultValue,
-}: ITicketTotalSupply) => {
+export const TicketTotalSupply = ({ className, defaultValue }: ITicketTotalSupply) => {
   const address = useGetContractAddress('Ticket');
 
   if (isAddress(address)) {

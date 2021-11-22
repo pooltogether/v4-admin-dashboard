@@ -22,10 +22,7 @@ export const AppPageHeader = ({
     'app-page-header flex items-center justify-between border-b-2'
   );
   const styleTitle = classNames(classNameTitle, 'font-semibold text-3xl');
-  const styleDescription = classNames(
-    classNameDescription,
-    'tag tag-white ml-2'
-  );
+  const styleDescription = classNames(classNameDescription, 'tag tag-white ml-2');
 
   return (
     <div className={styleBase}>

@@ -4,9 +4,7 @@ interface ContractIsolatedMultiacallProps {
   className: string;
 }
 
-export const ContractIsolatedMulticall = ({
-  className,
-}: ContractIsolatedMultiacallProps) => {
+export const ContractIsolatedMulticall = ({ className }: ContractIsolatedMultiacallProps) => {
   const styleBase = classNames(className, '');
   return <div className={styleBase}></div>;
 };

@@ -3,8 +3,8 @@ export const PrizeDistributionIsNotValidInformationPopover = () => {
     <div className="max-w-md ml-2">
       <h3 className="font-bold text-lg">PrizeDistribution Parameters Valid</h3>
       <p className="text-sm text-gray-600">
-        The PrizeDistribution parameters have been computed locally and compared
-        to the production parameters.
+        The PrizeDistribution parameters have been computed locally and compared to the production
+        parameters.
       </p>
       <p className="text-sm text-gray-600 mt-2">
         <span className="font-bold text-red-700">

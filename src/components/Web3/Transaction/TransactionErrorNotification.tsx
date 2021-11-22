@@ -17,7 +17,9 @@ const Toast = ({ label, description, address, state, tid }: ToastProps) => {
   return (
     <>
       <div
-        className={`max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+        className={
+          'max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5'
+        }
       >
         <div className="flex-1 items-center w-0 p-4">
           <div className="flex items-start">
@@ -27,10 +29,7 @@ const Toast = ({ label, description, address, state, tid }: ToastProps) => {
             <div className="ml-3 flex-1">
               <h3 className="font-semibold text-lg border-b-0 mb-1">
                 <span className="inline-block">{label}</span>{' '}
-                <AppInformationPopover
-                  className="inline-block -mt-1"
-                  content={description}
-                />
+                <AppInformationPopover className="inline-block -mt-1" content={description} />
               </h3>
               <p className="">
                 <span className="font-bold">Error:</span> {state?.errorMessage}

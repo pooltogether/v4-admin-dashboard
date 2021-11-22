@@ -28,10 +28,7 @@ const WalletOption = ({
   image,
   connector,
 }: WalletOptionProps) => {
-  const styleBase = classNames(
-    className,
-    'wallet-card flex items-center justify-between mb-2'
-  );
+  const styleBase = classNames(className, 'wallet-card flex items-center justify-between mb-2');
   const styleLabel = classNames(classNameLabel, 'font-semibold text-lg inline');
   const styleImage = classNames(classNameImage, '');
 
@@ -48,12 +45,7 @@ const WalletOption = ({
           <span className="ml-1 tag tag-smoke text-xs">Default Selection</span>
         )}{' '}
       </span>
-      <img
-        className={styleImage}
-        src={image}
-        alt={`${label} Icon`}
-        width={32}
-      />
+      <img className={styleImage} src={image} alt={`${label} Icon`} width={32} />
     </div>
   );
 };
@@ -100,10 +92,7 @@ export const WalletConnectSelectionModal = ({
               />
             ))}
           </div>
-          <span
-            className="tag tag-red cursor-pointer mt-2"
-            onClick={handleResetDefaultWallet}
-          >
+          <span className="tag tag-red cursor-pointer mt-2" onClick={handleResetDefaultWallet}>
             Reset Default Wallet
           </span>
         </ModalPanel>

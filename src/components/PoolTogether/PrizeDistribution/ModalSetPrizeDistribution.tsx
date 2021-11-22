@@ -38,38 +38,27 @@ export const ModalSetPrizeDistribution = ({
                 labelButton="Set Prize Distribution"
                 defaultValues={{
                   drawId,
-                  prizeDistribution:
-                    convertPrizeDistributionTupleToFormDefaults(
-                      prizeDistribution
-                    ),
+                  prizeDistribution: convertPrizeDistributionTupleToFormDefaults(prizeDistribution),
                 }}
               />
             </div>
             <div className="col-span-4 p-6">
               <div className="">
-                <h3 className="font-bold border-b-2 pb-3 mb-3 text-2xl">
-                  Current Settings
-                </h3>
+                <h3 className="font-bold border-b-2 pb-3 mb-3 text-2xl">Current Settings</h3>
                 <PrizeDistributionParameters
                   drawId={drawId}
                   classNameLabel="font-semibold text-gray-600 text-sm"
                   classNameValue="font-bold text-gray-900 text-sm"
-                  prizeDistribution={convertPrizeDistributionTupleToFormDefaults(
-                    prizeDistribution
-                  )}
+                  prizeDistribution={convertPrizeDistributionTupleToFormDefaults(prizeDistribution)}
                 />
               </div>
               <div className="mt-4">
-                <h3 className="font-bold border-b-2 pb-3 mb-3 text-2xl">
-                  Expected Settings
-                </h3>
+                <h3 className="font-bold border-b-2 pb-3 mb-3 text-2xl">Expected Settings</h3>
                 <PrizeDistributionParameters
                   drawId={drawId}
                   classNameLabel="font-semibold text-gray-600 text-sm"
                   classNameValue="font-bold text-gray-900 text-sm"
-                  prizeDistribution={convertPrizeDistributionTupleToFormDefaults(
-                    prizeDistribution
-                  )}
+                  prizeDistribution={convertPrizeDistributionTupleToFormDefaults(prizeDistribution)}
                 />
               </div>
             </div>

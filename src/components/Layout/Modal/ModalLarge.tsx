@@ -28,10 +28,10 @@ export const ModalLarge = ({ children, className, hideModal }: IModalLarge) => {
 
   // Animate Panel
   const animatePanel = useSpring({
-    from: { opacity: 0, transform: `translate3d(250px, 0px, 0px)` },
-    to: { opacity: 1, transform: `translate3d(0px, 0px, 0px)` },
-    enter: { opacity: 1, transform: `translate3d(0px, 0px, 0px)` },
-    leave: { opacity: 0, transform: `translate3d(250px, 0px, 0px)` },
+    from: { opacity: 0, transform: 'translate3d(250px, 0px, 0px)' },
+    to: { opacity: 1, transform: 'translate3d(0px, 0px, 0px)' },
+    enter: { opacity: 1, transform: 'translate3d(0px, 0px, 0px)' },
+    leave: { opacity: 0, transform: 'translate3d(250px, 0px, 0px)' },
     reverse: show,
     delay: 100,
   });
@@ -56,10 +56,7 @@ export const ModalLarge = ({ children, className, hideModal }: IModalLarge) => {
         className={'fixed top-0 bottom-0 left-0 right-0 z-10'}
         style={{ ...animateBackground, zIndex: 999 }}
       />
-      <animated.div
-        className={stylePanel}
-        style={{ ...animatePanel, zIndex: 1000 }}
-      >
+      <animated.div className={stylePanel} style={{ ...animatePanel, zIndex: 1000 }}>
         <div className="overflow-auto h-full">{children}</div>
       </animated.div>
     </>

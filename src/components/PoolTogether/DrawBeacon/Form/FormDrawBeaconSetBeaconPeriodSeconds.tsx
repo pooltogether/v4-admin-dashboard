@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 
 import { TransactionErrorNotification } from '@src/components/Web3/Transaction/TransactionErrorNotification';
@@ -22,11 +21,7 @@ export function FormDrawBeaconSetBeaconPeriodSeconds({
 }: FormDrawBeaconSetBeaconPeriodSecondsProps) {
   const { register, handleSubmit } = useForm();
   const address = useGetContractAddress('DrawBeacon');
-  const [execute, state] = useDrawBeaconFunction(
-    address,
-    'setBeaconPeriodSeconds',
-    {}
-  );
+  const [execute, state] = useDrawBeaconFunction(address, 'setBeaconPeriodSeconds', {});
   const styleButton = classNames('btn btn-green font-thin text-lg mt-2 w-full');
   const styleLabel = classNames('font-semibold mb-2 text-4xl');
 

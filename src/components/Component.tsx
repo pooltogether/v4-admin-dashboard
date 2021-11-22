@@ -1,18 +1,14 @@
-// @ts-nocheck
 import React, { ReactElement, ReactNode } from 'react';
 
-export function isClassComponent(component: any) {
+export function isClassComponent(component: unknown) {
   return (
-    typeof component === 'function' &&
-    !!component.prototype &&
-    component.prototype.isReactComponent
+    typeof component === 'function' && !!component.prototype && component.prototype.isReactComponent
   );
 }
 
 export function isFunctionComponent(component: any) {
   return (
-    typeof component === 'function' &&
-    String(component).includes('return React.createElement')
+    typeof component === 'function' && String(component).includes('return React.createElement')
   );
 }
 

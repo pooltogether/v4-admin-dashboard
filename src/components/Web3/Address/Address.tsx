@@ -7,15 +7,11 @@ import { EtherscanLink } from './EtherscanLink';
 
 interface IAddress {
   address: string;
-  isLink: Boolean;
+  isLink: boolean;
   trim: number;
 }
 
-export const Address = ({
-  address,
-  isLink,
-  trim = 7,
-}: IAddress): ReactElement | null => {
+export const Address = ({ address, isLink, trim = 7 }: IAddress): ReactElement | null => {
   if (isLink) {
     return (
       <EtherscanLink className="" address={address}>

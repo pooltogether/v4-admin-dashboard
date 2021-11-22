@@ -56,11 +56,7 @@ export const ContractFunctionCallElement = ({
     useContractFunction(contract, method, { transactionName: method }) ?? [];
 
   const handleExecute = () => {
-    if (
-      walletState.isActive &&
-      walletState.isConnected &&
-      walletState.account
-    ) {
+    if (walletState.isActive && walletState.isConnected && walletState.account) {
       executeTransaction(args);
     } else {
       setWalletState({ ...walletState, error: 'Wallet is not connected' });

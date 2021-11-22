@@ -1,11 +1,6 @@
 import { useEffect } from 'react';
 
-import {
-  injected,
-  walletconnect,
-  walletlink,
-  network,
-} from '@src/config/connectors';
+import { injected, walletconnect, walletlink, network } from '@src/config/connectors';
 import { useEthers } from '@usedapp/core';
 
 interface WalletAutoConnectProps {}

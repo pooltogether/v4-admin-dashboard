@@ -12,10 +12,7 @@ interface IWalletActivateInjected {
  * @name WalletActivateInjected
  * @param {Object} props
  */
-export const WalletActivateInjected = ({
-  className,
-  label,
-}: IWalletActivateInjected) => {
+export const WalletActivateInjected = ({ className, label }: IWalletActivateInjected) => {
   const { activate } = useEthers();
 
   // Establish Previous Connection with Authorized Wallet using the wallet-default localstorage value

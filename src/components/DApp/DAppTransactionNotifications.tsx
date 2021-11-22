@@ -39,14 +39,10 @@ export const DAppTransactionNotifications = () => {
       notifications.forEach((notif) => {
         switch (notif.type) {
           case 'transactionStarted':
-            toast(
-              <Toast status="Started" label={''} description={''} to={''} />
-            );
+            toast(<Toast status="Started" label={''} description={''} to={''} />);
             break;
           case 'transactionSucceed':
-            toast(
-              <Toast status="Success" label={''} description={''} to={''} />
-            );
+            toast(<Toast status="Success" label={''} description={''} to={''} />);
             break;
           default:
             return null;

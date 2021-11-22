@@ -7,10 +7,7 @@ interface EpochToRelativeDateProps {
   epoch?: string | number;
 }
 
-export const EpochToRelativeDate = ({
-  className,
-  epoch,
-}: EpochToRelativeDateProps) => {
+export const EpochToRelativeDate = ({ className, epoch }: EpochToRelativeDateProps) => {
   const SecondsToMill = 1000;
   const [relative, setRelative] = useState<any>(0);
 

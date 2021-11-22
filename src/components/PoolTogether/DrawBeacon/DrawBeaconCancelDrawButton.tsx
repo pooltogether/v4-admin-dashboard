@@ -13,9 +13,7 @@ interface DrawBeaconStartDrawButtonProps {
   className?: string;
 }
 
-export const DrawBeaconCancelDrawButton = ({
-  className,
-}: DrawBeaconStartDrawButtonProps) => {
+export const DrawBeaconCancelDrawButton = ({ className }: DrawBeaconStartDrawButtonProps) => {
   const address = useGetContractAddress('DrawBeacon');
   const contract = useGetContractDrawBeacon(address);
   const styleBase = classNames(className, 'DrawBeaconCancelDrawButton');
@@ -33,10 +31,7 @@ export const DrawBeaconCancelDrawButton = ({
           address={props.account}
         >
           <span className="">Cancel Draw</span>
-          <AppInformationPopover
-            className="ml-2 mt-0.5"
-            content={<ExecutionInformation />}
-          />
+          <AppInformationPopover className="ml-2 mt-0.5" content={<ExecutionInformation />} />
         </WalletAndContractStateButton>
       )}
     />

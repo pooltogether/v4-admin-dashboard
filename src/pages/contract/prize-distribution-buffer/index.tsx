@@ -30,10 +30,7 @@ const ContractPrizeDistributionBuffer = () => {
           <FormPrizeDistributionBufferPushPrizeDistribution
             labelButton={
               <span className="">
-                Push{' '}
-                <span className="font-light text-base">
-                  (pushPrizeDistribution)
-                </span>
+                Push <span className="font-light text-base">(pushPrizeDistribution)</span>
               </span>
             }
           />

@@ -1,6 +1,4 @@
-export function convertPrizeDistributionTupleToFormDefaults(
-  prizeDistributionTuple: any
-) {
+export function convertPrizeDistributionTupleToFormDefaults(prizeDistributionTuple: any) {
   if (!prizeDistributionTuple) return {};
   return {
     bitRangeSize: prizeDistributionTuple.bitRangeSize,

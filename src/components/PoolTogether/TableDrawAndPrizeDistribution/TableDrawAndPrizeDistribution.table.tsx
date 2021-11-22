@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 
 import { TableBody } from '@src/components/Layout/Table/TableBody';
@@ -36,7 +35,7 @@ export function Table({ columns, data }: ITable) {
       initialState: { pageIndex: 0 },
     },
     useExpanded,
-    usePagination
+    usePagination,
   );
 
   // Render the UI for your table

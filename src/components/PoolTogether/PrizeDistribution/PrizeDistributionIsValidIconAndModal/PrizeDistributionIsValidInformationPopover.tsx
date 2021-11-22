@@ -9,8 +9,8 @@ export const PrizeDistributionIsValidInformationPopover = ({
     <div className="max-w-md ml-2">
       <h3 className="font-bold text-lg">PrizeDistribution Parameters Valid</h3>
       <p className="text-sm text-gray-600">
-        The PrizeDistribution parameters have been computed locally and compared
-        to the production parameters.
+        The PrizeDistribution parameters have been computed locally and compared to the production
+        parameters.
       </p>
       <p className="text-sm text-gray-600 mt-2">
         <span className="font-bold">Everything is matching as expected.</span>
@@ -19,12 +19,8 @@ export const PrizeDistributionIsValidInformationPopover = ({
         <span className="text-gray-600 block">
           Status:
           <span className="">
-            {!!isValid && (
-              <span className="text-green-500 font-bold">Valid</span>
-            )}{' '}
-            {!isValid && (
-              <span className="text-red-500 font-bold">Invalid</span>
-            )}
+            {!!isValid && <span className="text-green-500 font-bold">Valid</span>}{' '}
+            {!isValid && <span className="text-red-500 font-bold">Invalid</span>}
           </span>
         </span>
         <div className="text-right"></div>

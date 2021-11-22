@@ -14,12 +14,7 @@ interface IWalletBlockieProps {
  * @name WalletBlockie
  * @param {Object} props
  */
-export const WalletBlockie = ({
-  className,
-  address,
-  width,
-  ...props
-}: IWalletBlockieProps) => {
+export const WalletBlockie = ({ className, address, width, ...props }: IWalletBlockieProps) => {
   const { account } = useEthers();
   const user = address || account || constants.AddressZero;
   return (

@@ -21,9 +21,7 @@ export const columns = [
     accessor: 'drawId',
     Cell: ({ value, row }: IRow) => (
       <div className="flex flex-col">
-        <span className="font-bold text-2xl text-purple-800">
-          {value && value}
-        </span>
+        <span className="font-bold text-2xl text-purple-800">{value && value}</span>
         <PrizeDistributionIsValidIconAndModal
           drawId={value.toString()}
           draw={row?.original?.draw}
@@ -37,10 +35,7 @@ export const columns = [
     accessor: 'draw.timestamp',
     Cell: ({ value }: IValueBigNumber) => (
       <span className="">
-        <EpochToCalendarDate
-          className="block text-sm font-bold text-purple-700"
-          epoch={value}
-        />
+        <EpochToCalendarDate className="block text-sm font-bold text-purple-700" epoch={value} />
         <EpochToRelativeDate className="block text-xs" epoch={value} />
       </span>
     ),
@@ -89,9 +84,7 @@ export const columns = [
             draw={row?.original?.draw}
             prizeDistribution={row?.original?.prizeDistribution}
           >
-            <span className="tag tag-green-light tag-sm hover-up">
-              Parameters
-            </span>
+            <span className="tag tag-green-light tag-sm hover-up">Parameters</span>
           </ModalDrawAndPrizeDistributionAllParametersCard>
         </div>
         <span {...row.getToggleRowExpandedProps()}>

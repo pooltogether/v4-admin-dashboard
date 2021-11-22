@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useState } from 'react';
 
 import { bridgeMainnet, bridgeTestnet } from '@src/config/bridging';
@@ -40,14 +39,10 @@ const Network = ({
   );
 
   return (
-    <div
-      className={styleBase}
-      onClick={() => handleChangeNetwork(chainId, chain)}
-    >
+    <div className={styleBase} onClick={() => handleChangeNetwork(chainId, chain)}>
       <img alt={label} src={image} width={22} />{' '}
       <span className="font-bold ml-2">
-        {chainNetwork}{' '}
-        <span className="font-normal text-xs">(ID: {chainId})</span>
+        {chainNetwork} <span className="font-normal text-xs">(ID: {chainId})</span>
       </span>
     </div>
   );
@@ -91,12 +86,7 @@ export const ChainSwitch = ({ className }: ChainSwitchProps) => {
       <div className="">
         <label className="flex items-center">
           <span className="font-bold text-xs mx-1">MAINNET</span>
-          <Switch
-            height={20}
-            width={42}
-            onChange={handleChange}
-            checked={isChecked}
-          />
+          <Switch height={20} width={42} onChange={handleChange} checked={isChecked} />
         </label>
       </div>
       {networksSelected.map((network, idx) => (

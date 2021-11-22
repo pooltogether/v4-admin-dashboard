@@ -38,11 +38,7 @@ export const TablePagination = ({
   return (
     <div className={styleBase}>
       <div className="">
-        <button
-          className="tag tag-smoke"
-          onClick={() => gotoPage(0)}
-          disabled={!canPreviousPage}
-        >
+        <button className="tag tag-smoke" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {'<<'}
         </button>{' '}
         <button
@@ -52,11 +48,7 @@ export const TablePagination = ({
         >
           {'<'}
         </button>{' '}
-        <button
-          className="tag tag-smoke"
-          onClick={() => nextPage()}
-          disabled={!canNextPage}
-        >
+        <button className="tag tag-smoke" onClick={() => nextPage()} disabled={!canNextPage}>
           {'>'}
         </button>{' '}
         <button
@@ -97,11 +89,7 @@ export const TablePagination = ({
           }}
         >
           {[10, 20, 30, 40, 50].map((pageSizeParams) => (
-            <option
-              className="text-xl"
-              key={pageSizeParams}
-              value={pageSizeParams}
-            >
+            <option className="text-xl" key={pageSizeParams} value={pageSizeParams}>
               Show {pageSizeParams}
             </option>
           ))}

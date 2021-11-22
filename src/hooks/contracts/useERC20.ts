@@ -1,4 +1,4 @@
-// @ts-nocheck
+// 
 import { getAddress, isAddress } from '@ethersproject/address';
 import { InterfaceERC20 } from '@src/contracts/interfaces';
 import { useGetContractERC20 } from '@src/hooks/contracts/useGetContractERC20';

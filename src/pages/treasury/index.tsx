@@ -11,10 +11,7 @@ const Treasury = () => {
 
   return (
     <div className="page--treasury">
-      <Meta
-        title="Treasury - V4 PoolTogether"
-        description="PoolTogether V4 Admin Dashbard"
-      />
+      <Meta title="Treasury - V4 PoolTogether" description="PoolTogether V4 Admin Dashbard" />
       <AppPageHeader
         className="mt-0"
         title="Treasury"

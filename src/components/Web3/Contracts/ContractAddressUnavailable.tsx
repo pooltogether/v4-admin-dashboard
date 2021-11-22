@@ -12,10 +12,7 @@ export const ContractAddressUnavailable = ({
   label,
 }: ContractAddressUnavailableProps) => {
   const styleBase = classNames(className, 'ContractAddressUnavailable');
-  const styleLabel = classNames(
-    classNameLabel,
-    'ContractAddressUnavailable__label'
-  );
+  const styleLabel = classNames(classNameLabel, 'ContractAddressUnavailable__label');
   return (
     <div className={styleBase}>
       <span className={styleLabel}>{label}</span>

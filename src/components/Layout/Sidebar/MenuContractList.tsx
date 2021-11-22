@@ -25,11 +25,7 @@ export const MenuContractList = ({ contracts }) => {
   if (idx(items, (_) => _.length) === 0) return null;
 
   return items.map((item, key) => (
-    <MenuItemSidebar
-      key={key}
-      label={item.label}
-      href={`/contract/${item.address}`}
-    />
+    <MenuItemSidebar key={key} label={item.label} href={`/contract/${item.address}`} />
   ));
 };
 
