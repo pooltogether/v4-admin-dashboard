@@ -1,10 +1,4 @@
-interface PrizeDistributionIsNotValidInformationPopoverProps {
-  isValid: boolean;
-}
-
-export const PrizeDistributionIsNotValidInformationPopover = ({
-  isValid,
-}: PrizeDistributionIsNotValidInformationPopoverProps) => {
+export const PrizeDistributionIsNotValidInformationPopover = () => {
   return (
     <div className="max-w-md ml-2">
       <h3 className="font-bold text-lg">PrizeDistribution Parameters Valid</h3>

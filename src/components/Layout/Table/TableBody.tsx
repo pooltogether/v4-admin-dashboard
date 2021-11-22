@@ -23,7 +23,6 @@ export const TableBody = ({
   rowExpanded,
   ...props
 }: ITableBody) => {
-  const styleBase = classNames('flex items-center justify-between');
   const styleCell = classNames('border-b-1 border-gray-100 py-2 px-4');
   return (
     <tbody {...props} className="z-">

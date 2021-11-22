@@ -11,7 +11,12 @@ interface ITokenBalance {
   trim?: string | number;
 }
 
-export const TokenBalance = ({ className, amount, decimals, trim }: ITokenBalance) => {
+export const TokenBalance = ({
+  className,
+  amount,
+  decimals,
+  trim,
+}: ITokenBalance) => {
   return useMemo(() => {
     return (
       <span className={classNames('inline-block', className)}>

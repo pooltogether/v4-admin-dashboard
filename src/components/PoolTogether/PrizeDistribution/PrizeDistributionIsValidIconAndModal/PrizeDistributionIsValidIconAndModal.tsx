@@ -44,7 +44,7 @@ export const PrizeDistributionIsValidIconAndModal = ({
       );
       setIsValidPrizeDistribution(calculatedMatchesCurrentSettings);
     })();
-  }, []);
+  }, [draw, drawId, prizeDistribution]);
 
   const styleBase = classNames(className, '');
   return (
@@ -78,11 +78,7 @@ export const PrizeDistributionIsValidIconAndModal = ({
                 </div>
               </ModalSetPrizeDistribution>
               <AppInformationPopover
-                content={
-                  <PrizeDistributionIsNotValidInformationPopover
-                    isValid={true}
-                  />
-                }
+                content={<PrizeDistributionIsNotValidInformationPopover />}
                 size={12}
                 positions={['right', 'top']}
               />

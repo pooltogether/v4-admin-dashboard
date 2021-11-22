@@ -5,11 +5,10 @@ import { useRouter } from 'next/router';
 interface IMenuItemSidebar {
   label: string;
   href: string;
-  image: Element;
-  styled: string | object | Array<any>;
-  labelStyle: string;
-  iconStyle: string;
-  defaultStyle: Boolean;
+  image?: Element;
+  labelStyle?: string;
+  iconStyle?: string;
+  defaultStyle?: Boolean;
 }
 
 export const MenuItemSidebar = ({

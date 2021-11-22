@@ -9,8 +9,14 @@ type IDrawSettingsFetch = {
   className?: string;
 };
 
-const DrawSettingsFetch = ({ className, address, drawId }: IDrawSettingsFetch) => {
-  const value = usePrizeDistributionBufferCall(address, 'getDrawSetting', [drawId]);
+const DrawSettingsFetch = ({
+  className,
+  address,
+  drawId,
+}: IDrawSettingsFetch) => {
+  const value = usePrizeDistributionBufferCall(address, 'getDrawSetting', [
+    drawId,
+  ]);
   if (value)
     return (
       <div className={className}>
@@ -51,10 +57,21 @@ type IDrawSettings = {
  * @name DrawSettings
  * @param {Object} props
  */
-export const DrawSettings = ({ className, name, drawId, defaultValue }: IDrawSettings) => {
+export const DrawSettings = ({
+  className,
+  name,
+  drawId,
+  defaultValue,
+}: IDrawSettings) => {
   const address = useGetContractAddress(name);
   if (isAddress(address)) {
-    return <DrawSettingsFetch address={address} className={className} drawId={drawId} />;
+    return (
+      <DrawSettingsFetch
+        address={address}
+        className={className}
+        drawId={drawId}
+      />
+    );
   }
   return <span className={className}>{defaultValue}</span>;
 };

@@ -96,9 +96,13 @@ export const TablePagination = ({
             setPageSize(Number(e.target.value));
           }}
         >
-          {[10, 20, 30, 40, 50].map((pageSize) => (
-            <option className="text-xl" key={pageSize} value={pageSize}>
-              Show {pageSize}
+          {[10, 20, 30, 40, 50].map((pageSizeParams) => (
+            <option
+              className="text-xl"
+              key={pageSizeParams}
+              value={pageSizeParams}
+            >
+              Show {pageSizeParams}
             </option>
           ))}
         </select>
