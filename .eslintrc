@@ -1,6 +1,6 @@
 {
   // Configuration for JavaScript files
-  "extends": ["plugin:prettier/recommended",  "plugin:@next/next/recommended"],
+  "extends": ["plugin:prettier/recommended"],
   "rules": {
     "prettier/prettier": [
       "error",
