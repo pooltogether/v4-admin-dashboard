@@ -5,13 +5,13 @@ import { Draw } from '@pooltogether/v4-js/dist/types';
 import { AppInformationPopover } from '@src/components/App/AppInformationPopover';
 import { ModalSetPrizeDistribution } from '@src/components/PoolTogether/PrizeDistribution/ModalSetPrizeDistribution';
 import { convertPrizeDistributionTupleToFormDefaults } from '@src/lib/convertPrizeDistributionTupleToFormDefaults';
+import { useEthers } from '@usedapp/core';
 import classNames from 'classnames';
 import { isEqual } from 'lodash';
 import { CheckCircle, AlertTriangle } from 'react-feather';
 
 import { PrizeDistributionIsNotValidInformationPopover } from './PrizeDistributionIsNotValidInformationPopover';
 import { PrizeDistributionIsValidInformationPopover } from './PrizeDistributionIsValidInformationPopover';
-
 interface PrizeDistributionIsValidIconAndModalProps {
   className?: string;
   drawId: string;
@@ -25,20 +25,63 @@ export const PrizeDistributionIsValidIconAndModal = ({
   draw,
   prizeDistribution,
 }: PrizeDistributionIsValidIconAndModalProps) => {
-  const prizeTierHistory = '0xdD1cba915Be9c7a1e60c4B99DADE1FC49F67f80D';
-  const ticketL1 = '0xdd4d117723C257CEe402285D3aCF218E9A8236E1';
-  const ticketL2 = '0x6a304dFdb9f808741244b6bfEe65ca7B3b3A6076';
+  const { chainId } = useEthers();
+
+  const [contracts, setContracts] = useState<any>();
+
+  useEffect(() => {
+    if (chainId === 1) {
+      const prizeTierHistory = '0xdD1cba915Be9c7a1e60c4B99DADE1FC49F67f80D';
+      const ticketL1 = '0xdd4d117723C257CEe402285D3aCF218E9A8236E1';
+      const ticketL2 = '0x6a304dFdb9f808741244b6bfEe65ca7B3b3A6076';
+      setContracts({
+        prizeTierHistory,
+        ticketL1,
+        ticketL2,
+      });
+    }
+
+    if (chainId === 137) {
+      const prizeTierHistory = '0xdD1cba915Be9c7a1e60c4B99DADE1FC49F67f80D';
+      const ticketL1 = '0x6a304dFdb9f808741244b6bfEe65ca7B3b3A6076';
+      const ticketL2 = '0xdd4d117723C257CEe402285D3aCF218E9A8236E1';
+
+      setContracts({
+        prizeTierHistory,
+        ticketL1,
+        ticketL2,
+      });
+    }
+  }, [chainId]);
+
+  const [prizeDistributionCalculated, setPrizeDistributionCalculatedSet] = useState<any>();
+  useEffect(() => {
+    if (contracts) {
+      (async () => {
+        const pz = await computePrizeDistribution(
+          draw,
+          contracts.prizeTierHistory,
+          contracts.ticketL1,
+          [contracts.ticketL2]
+        );
+
+        console.log(pz, 'pzpz');
+        setPrizeDistributionCalculatedSet(pz);
+      })();
+    }
+  }, [contracts, draw, drawId]);
+
   const [isValidPrizeDistribution, setIsValidPrizeDistribution] = useState<boolean>(false);
   useEffect(() => {
     (async () => {
-      const results = convertPrizeDistributionTupleToFormDefaults(
-        await computePrizeDistribution(draw, prizeTierHistory, ticketL1, [ticketL2])
-      );
-      const resultsWithDrawId = { ...results, drawId: Number(drawId) };
-      const calculatedMatchesCurrentSettings = isEqual(resultsWithDrawId, prizeDistribution);
-      setIsValidPrizeDistribution(calculatedMatchesCurrentSettings);
+      if (prizeDistributionCalculated && !isValidPrizeDistribution) {
+        const results = convertPrizeDistributionTupleToFormDefaults(prizeDistributionCalculated);
+        const resultsWithDrawId = { ...results, drawId: Number(drawId) };
+        const calculatedMatchesCurrentSettings = isEqual(resultsWithDrawId, prizeDistribution);
+        setIsValidPrizeDistribution(calculatedMatchesCurrentSettings);
+      }
     })();
-  }, [draw, drawId, prizeDistribution]);
+  }, [drawId, isValidPrizeDistribution, prizeDistribution, prizeDistributionCalculated]);
 
   const styleBase = classNames(className, '');
   return (
