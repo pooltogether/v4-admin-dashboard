@@ -19,8 +19,20 @@ The PoolTogether V4 Admin Dashboard simplifies reading and writing to the V4 pro
 
 # Getting Started
 
-The PoolTogether V4 Admin Dashboard is built to simplify user interaciton with the protocol, and also provider a foundation for smooth developer experience.
+## Development
+```.sh
+yarn dev
+```
 
+## Production
+
+```.sh
+yarn build
+```
+
+When the `production` is updated a new build will be deployed on Netlify.
+
+# Overview
 ### Core Web3 Components
 The application is built with modularity in mind. Components can express what `data` is required and the fetching/normalizing for the frontend will be handled automatically.
 
@@ -101,20 +113,6 @@ ContractDrawBeacon.layout = Admin;
 
 export default ContractDrawBeacon;
 
-```
-
-
-## Development
-```.sh
-yarn dev
-```
-
-## Production
-The `production` branch is automatically deployed on every push.
-
-To test the build run
-```.sh
-yarn build
 ```
 
 # Changelog
